@@ -10,11 +10,16 @@ class DiagnosisController extends Controller
 {
     public function diagnosis()
     {
-        return view('backend.layouts.diagnosis');
+        return view('backend.layouts.diagnosis_details.diagnosis');
 
     }
 public function creatediagnosis(Request $request)
 {
+    
+        $request->validate([
+            'name'=>'required',
+            'type'=>'required'
+        ]);
 
     Diagnosis_list::create([
         'name'=> $request->input('name'),
@@ -22,13 +27,13 @@ public function creatediagnosis(Request $request)
         
     ]);
 
-    return redirect()->back();
+    return redirect()->back()->with('message','Diagnosis Created Successfully.');
 
 }
 
 public function list()
 {
     $list=Diagnosis_list::all();
-    return view('backend.layouts.diagnosis_list',compact('list'));
+    return view('backend.layouts.diagnosis_details.diagnosis_list',compact('list'));
 }
 }

@@ -19,7 +19,7 @@ class CreatePrescriptionsTable extends Migration
             $table->string('patient_name',255);
             $table->float('weight',5);
             $table->string('age',5);
-            $table->year('bp');
+            $table->string('bp');
            
             $table->timestamps();
         });

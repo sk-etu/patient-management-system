@@ -36,18 +36,56 @@
                              Diagnosis
                              <i class="fa fa-caret-down"></i>
                         </div>                        
-                    <ul id="diagnosis" class="collapse">
+                        <ul id="diagnosis" class="collapse">
+                            <li>
+                                <a href="{{route('diagnosis')}}">
+                                    <i></i>Inser Diagnosis</a>
+                            </li>
+                            <li>
+                                <a href="{{route('diagnosis.list')}}">
+                                <i></i>Diagnosis_list</a>
+                            </li>
+                        </ul>
+                    </li> 
+   
+                    <li>
+                        <div href="#" data-toggle="collapse" data-target="#medicine" aria-expanded="true">
+                             <i class="fa fa-tags"></i>
+                             Medicine
+                             <i class="fa fa-caret-down"></i>
+                        </div>                        
+                    <ul id="medicine" class="collapse">
                         <li>
-                            <a href="{{route('diagnosis')}}">
-                                <i></i>Inser Diagnosis</a>
+                            <a href="{{route('medicine')}}">
+                                <i></i>Insert Medicine</a>
                         </li>
+                        
                         <li>
-                            <a href="{{route('diagnosis.list')}}">
-                            <i></i>Diagnosis_list</a>
+                            <a href="{{route('medicine.list')}}">
+                                <i></i>medicine_list</a>
                         </li>
                     </ul>
-                    </li>                       
+                    </li>                   
+
+                    <li>
+                        <div href="#" data-toggle="collapse" data-target="#appointment" aria-expanded="true">
+                             <i class="fa fa-tags"></i>
+                             Appointment
+                             <i class="fa fa-caret-down"></i>
+                        </div>                        
+                    <ul id="appointment" class="collapse">
+                        <li>
+                            <a href="{{route('appointment')}}">
+                                <i></i>Insert Appointment</a>
+                        </li>
                         
+                        <li>
+                            <a href="{{route('appointment.list')}}">
+                                <i></i>Appointment_list</a>
+                        </li>
+                    </ul>
+                    </li>
+
                     </ul>
                 </nav>
             </div>
