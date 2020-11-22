@@ -9,9 +9,10 @@
                                 <table class="table table-borderless table-striped table-earning">
                                         <thead>
                                             <tr>
-                                            <th scope="col">#</th>
-                                            <th scope="col">Diagnosis Name</th>
-                                            <th scope="col">Type</th>                                          
+                                            <th>ID</th>
+                                            <th>Diagnosis Name</th>
+                                            <th>Type</th> 
+                                            <th>Action</th>                                         
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -19,7 +20,12 @@
                                         <tr>
                                             <th scope="row">{{$data->id}}</th>
                                             <td>{{$data->name}}</td>
-                                            <td>{{$data->type}}</td>                                        
+                                            <td>{{$data->type}}</td>  
+                                            <td>
+                                                <a href="" class="btn btn-sm btn-info">Edit</a>
+                                                <a href="" class="btn btn-sm btn-info">Delete</a>
+                                                <a href="" class="btn btn-sm btn-info">View</a>
+                                            </td>                                      
                                         </tr>
                                         @endforeach
                                         </tbody>

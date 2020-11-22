@@ -34,7 +34,9 @@ class PrescriptionController extends Controller
         'patient_name'=>$request->input('patient_name'),
         'weight'=>$request->input('weight'),
         'age'=>$request->input('age'),
-        'bp'=>$request->input('bp')
+        'bp'=>$request->input('bp'),
+        'medicine_id'=>$request->input('medicine_id'),
+        'diagnosis_id'=>$request->input('diagnosis_id')
 
     ]);
     return redirect()->back()->with('message','Prescription Created Successfully.');

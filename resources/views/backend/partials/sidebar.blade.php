@@ -10,7 +10,10 @@
                         <li class="active has-sub">
                             <a class="js-arrow" href="{{route('dashboard')}}">
                                 <i class="fas fa-tachometer-alt"></i>Dashboard</a>                      
-                        </li>                                           
+                        </li>  
+
+    <!-- Prescription -->
+
                     <li>
                         <div href="#" data-toggle="collapse" data-target="#prescription" aria-expanded="true">
                              <i class="fa fa-tags"></i>
@@ -29,9 +32,11 @@
                         </li>
                     </ul>
                     </li>
-                    
+
+  <!-- Diagnosis -->
+
                     <li>
-                        <div href="#" data-toggle="collapse" data-target="#diagnosis" aria-expanded="true">
+                        <div href="#" style="margin-top: 15px;" data-toggle="collapse" data-target="#diagnosis" aria-expanded="true">
                              <i class="fa fa-tags"></i>
                              Diagnosis
                              <i class="fa fa-caret-down"></i>
@@ -48,8 +53,10 @@
                         </ul>
                     </li> 
    
+   <!-- Medicine -->
+
                     <li>
-                        <div href="#" data-toggle="collapse" data-target="#medicine" aria-expanded="true">
+                        <div href="#" style="margin-top: 15px;" data-toggle="collapse" data-target="#medicine" aria-expanded="true">
                              <i class="fa fa-tags"></i>
                              Medicine
                              <i class="fa fa-caret-down"></i>
@@ -66,9 +73,9 @@
                         </li>
                     </ul>
                     </li>                   
-
+ <!-- Appointment -->
                     <li>
-                        <div href="#" data-toggle="collapse" data-target="#appointment" aria-expanded="true">
+                        <div href="#" style="margin-top: 15px;" data-toggle="collapse" data-target="#appointment" aria-expanded="true">
                              <i class="fa fa-tags"></i>
                              Appointment
                              <i class="fa fa-caret-down"></i>
@@ -83,6 +90,40 @@
                             <a href="{{route('appointment.list')}}">
                                 <i></i>Appointment_list</a>
                         </li>
+                    </ul>
+                    </li>
+
+  <!-- Doctor -->
+                    <li>
+                        <div href="#" style="margin-top: 15px;" data-toggle="collapse" data-target="#appointment" aria-expanded="true">
+                             <i class="fa fa-tags"></i>
+                             Doctor
+                             <i class="fa fa-caret-down"></i>
+                        </div>                        
+                    <ul id="doctor" class="collapse">
+                        <li>
+                            <a href="{{route('doctor')}}">
+                                <i></i>Insert Doctor</a>
+                        </li>
+                        
+                      
+                    </ul>
+                    </li>
+
+  <!-- patient -->
+                    <li>
+                        <div href="#" style="margin-top: 15px;" data-toggle="collapse" data-target="#patient" aria-expanded="true">
+                             <i class="fa fa-tags"></i>
+                             Patient
+                             <i class="fa fa-caret-down"></i>
+                        </div>                        
+                       <ul id="patient" class="collapse">
+                        <li>
+                            <a href="{{route('patient')}}">
+                                <i></i>Insert Patient</a>
+                        </li>
+                        
+                       
                     </ul>
                     </li>
 

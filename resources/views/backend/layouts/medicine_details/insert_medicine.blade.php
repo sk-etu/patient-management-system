@@ -24,12 +24,12 @@
                   
                   <div class="form-group">
                             <label for="name">Enter Name</label>
-                            <input name="name" required placeholder="Enter medicine name" type="text" class="form-control" id="name" aria-describedby="emailHelp">
+                            <input name="name"  placeholder="Enter medicine name" type="text" class="form-control" id="name" aria-describedby="emailHelp">
                   </div>
 
                   <div class="form-group">
                     <label for="generic name">Generic Name</label>
-                    <input  name="generic name" required placeholder="Enter generic type" type="text" class="form-control" id="type" aria-describedby="emailHelp">
+                    <input  name="generic name"  placeholder="Enter generic type" type="text" class="form-control" id="type" aria-describedby="emailHelp">
                   
                   </div>
                   <button type="submit" class="btn btn-primary">Submit</button>

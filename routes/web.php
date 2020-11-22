@@ -40,3 +40,12 @@ Route::get('/medicine/list','Backend\MedicineController@list')->name('medicine.l
 Route::get('/appointment','Backend\AppointmentController@appointment')->name('appointment');
 Route::post('/appointment','Backend\AppointmentController@createappointment')->name('appointment.store');
 Route::get('/appointment/list','Backend\AppointmentController@list')->name('appointment.list');
+
+
+//Doctor
+Route::get('/doctor','Backend\DoctorController@doctor')->name('doctor');
+
+
+
+//Patient
+Route::get('/patient','Backend\PatientController@patient')->name('patient');

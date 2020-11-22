@@ -10,10 +10,11 @@
                                         
                                         <thead>
                                             <tr>
-                                            <th scope="col">ID</th>
-                                            <th scope="col">Patient ID</th>
-                                            <th scope="col">Patient Name</th>
-                                            <th scope="col">Emergency</th>
+                                            <th>ID</th>
+                                            <th>Patient ID</th>
+                                            <th>Patient Name</th>
+                                            <th>Emergency</th>
+                                            <th>Action</th>
 
                                             </tr>
                                         </thead>
@@ -23,7 +24,12 @@
                                             <th scope="row">{{$data->id}}</th>
                                             <td>{{$data->patient_id}}</td>
                                             <td>{{$data->patient_name}}</td>
-                                            <td>{{$data->emergency}}</td>                                        
+                                            <td>{{$data->emergency}}</td> 
+                                            <td>
+                                                <a href="" class="btn btn-sm btn-info">Edit</a>
+                                                <a href="" class="btn btn-sm btn-info">Delete</a>
+                                                <a href="" class="btn btn-sm btn-info">View</a>
+                                            </td>                                       
                                         </tr>
                                         @endforeach
                                         </tbody>

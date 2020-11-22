@@ -7,5 +7,10 @@ use Illuminate\Http\Request;
 
 class PatientController extends Controller
 {
-    //
+    public function patient()
+    {
+        return view('backend.layouts.patient_details.insert_patient');
+
+    }
+
 }

@@ -20,6 +20,8 @@ class CreatePrescriptionsTable extends Migration
             $table->float('weight',5);
             $table->string('age',5);
             $table->string('bp');
+            $table->string('medicine_id');
+            $table->string('diagnosis_id');
            
             $table->timestamps();
         });
