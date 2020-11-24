@@ -15,11 +15,13 @@ class DiagnosisController extends Controller
     }
 public function creatediagnosis(Request $request)
 {
-    
+
         $request->validate([
             'name'=>'required',
             'type'=>'required'
+
         ]);
+    
 
     Diagnosis_list::create([
         'name'=> $request->input('name'),
@@ -27,7 +29,7 @@ public function creatediagnosis(Request $request)
         
     ]);
 
-    return redirect()->back()->with('message','Diagnosis Created Successfully.');
+    return redirect()->back()->with('message','Diagnosis create successfully.');
 
 }
 

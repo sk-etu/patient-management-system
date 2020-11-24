@@ -13,8 +13,8 @@ class PrescriptionController extends Controller
   public function prescription()
   {
 
-    $diagnoses=Diagnosis_list::all();
-    $medicines=Medicine::all();
+    $diagnoses=Diagnosis_list::with('diagnosisrelation');
+    $medicines=Medicine::with('medicinerelation');
     return view ('backend.layouts.prescription_details.prescription',compact('diagnoses'),compact('medicines'));
   } 
 

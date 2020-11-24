@@ -49,3 +49,13 @@ Route::get('/doctor','Backend\DoctorController@doctor')->name('doctor');
 
 //Patient
 Route::get('/patient','Backend\PatientController@patient')->name('patient');
+
+
+
+// Frontend
+// Home-About
+Route::get('/frontend/home','Frontend\HomeController@index')->name('home');
+Route::get('/about','Frontend\HomeController@about')->name('about');
+
+//Login
+Route::get('login','Frontend\LoginController@index')->name('login');
