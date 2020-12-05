@@ -23,7 +23,7 @@
                                             <td>{{$data->generic_name}}</td>  
                                             <td>
                                                 <a href="" class="btn btn-sm btn-info">Edit</a>
-                                                <a href="" class="btn btn-sm btn-info">Delete</a>
+                                                <a href="{{route('medicine.delete',$data->id)}}" class="btn btn-sm btn-info">Delete</a>
                                                 <a href="" class="btn btn-sm btn-info">View</a>
                                             </td>                                      
                                         </tr>

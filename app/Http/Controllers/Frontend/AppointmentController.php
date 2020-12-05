@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Backend;
+namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
 use App\Models\Appointment;
@@ -10,20 +10,21 @@ class AppointmentController extends Controller
 {
     public function appointment()
     {
-        return view('backend.layouts.appointment_details.insert_appointment');
+        return view('frontend.layouts.insert_appointment');
 
     }
 public function createappointment(Request $request)
 {
-    
+
         $request->validate([
-            'patient_id'=>'required',
-            'patient_name'=>'required'
+            'id'=>'required',
+            'name'=>'required'
         ]);
 
         Appointment::create([
-        'patient_id'=> $request->input('patient_id'),
-        'patient_name'=>$request->input('patient_name'),
+        'patient_id'=> $request->input('id'),
+        'patient_name'=>$request->input('name'),
+        'date'=>$request->input('date'),
         'emergency'=>$request->input('emergency')
         
     ]);

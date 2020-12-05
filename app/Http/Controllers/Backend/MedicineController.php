@@ -36,4 +36,18 @@ public function list()
     $list=Medicine::all();
     return view('backend.layouts.medicine_details.medicine_list',compact('list'));
 }
+
+     // delete data
+     public function delete($id)
+     {
+        $medicine=Medicine::find($id);
+        if(!empty($medicine))
+        {
+            $medicine->delete();
+            $message="medicine deleted Successfully";
+        }else{
+            $message="No data found.";
+        }
+         return redirect()->back()->with('message',$message);
+     }
 }

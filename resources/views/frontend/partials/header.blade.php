@@ -36,11 +36,12 @@
                     <ul class="nav navbar-nav navbar-right">
                          <li><a href="{{route('home')}}" class="smoothScroll">Home</a></li>
                          <li><a href="{{route('about')}}" class="smoothScroll">About Us</a></li>
-                         <li><a href="#team" class="smoothScroll">Doctor</a></li>
                          <li><a href="#news" class="smoothScroll">Notification</a></li>
                          <li><a href="#google-map" class="smoothScroll">Contact</a></li>
-                         <li><a href="{{route('login')}}" class="smoothScroll">Login</a></li>
-                         <li class="appointment-btn"><a href="#appointment">Make an appointment</a></li>
+                         <li><a href="{{route('registration')}}" class="smoothScroll">Registration</a></li>
+                         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                              Make A appointment
+                         </button>                          
                     </ul>
                </div>
 

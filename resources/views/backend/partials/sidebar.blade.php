@@ -111,19 +111,22 @@
                     </li>
 
   <!-- patient -->
-                    <li>
-                        <div href="#" style="margin-top: 15px;" data-toggle="collapse" data-target="#patient" aria-expanded="true">
+  <li>
+                        <div href="#" style="margin-top: 15px;" data-toggle="collapse" data-target="#Patient" aria-expanded="true">
                              <i class="fa fa-tags"></i>
                              Patient
                              <i class="fa fa-caret-down"></i>
                         </div>                        
-                       <ul id="patient" class="collapse">
+                    <ul id="Patient" class="collapse">
                         <li>
-                            <a href="{{route('patient')}}">
+                            <a href="{{route('registration')}}">
                                 <i></i>Insert Patient</a>
                         </li>
                         
-                       
+                        <li>
+                            <a href="{{route('patient.list')}}">
+                                <i></i>Patient_list</a>
+                        </li>
                     </ul>
                     </li>
 

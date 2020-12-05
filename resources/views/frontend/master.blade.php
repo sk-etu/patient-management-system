@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 
-     <title>Health - Medical Website Template</title>
+     <title>Dr. Fatema tuz johra eva</title>
 
      <meta charset="UTF-8">
      <meta http-equiv="X-UA-Compatible" content="IE=Edge">

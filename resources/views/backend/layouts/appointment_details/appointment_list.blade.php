@@ -13,6 +13,7 @@
                                             <th>ID</th>
                                             <th>Patient ID</th>
                                             <th>Patient Name</th>
+                                            <th>Date</th>
                                             <th>Emergency</th>
                                             <th>Action</th>
 
@@ -24,6 +25,7 @@
                                             <th scope="row">{{$data->id}}</th>
                                             <td>{{$data->patient_id}}</td>
                                             <td>{{$data->patient_name}}</td>
+                                            <td>{{$data->date}}</td>
                                             <td>{{$data->emergency}}</td> 
                                             <td>
                                                 <a href="" class="btn btn-sm btn-info">Edit</a>
