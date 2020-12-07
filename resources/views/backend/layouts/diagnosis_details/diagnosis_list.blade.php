@@ -16,15 +16,14 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                        @foreach($list as $data)
+                                        @foreach($list as $key=>$data)
                                         <tr>
-                                            <th scope="row">{{$data->id}}</th>
+                                            <th scope="row">{{$key+1}}</th>
                                             <td>{{$data->name}}</td>
                                             <td>{{$data->type}}</td>  
                                             <td>
-                                                <a href="" class="btn btn-sm btn-info">Edit</a>
-                                                <a href="" class="btn btn-sm btn-info">Delete</a>
-                                                <a href="" class="btn btn-sm btn-info">View</a>
+                                                <a href="{{route('diagnosis.delete',$data->id)}}" class="btn btn-sm btn-info">Delete</a>
+                                                <a href="{{route('diagnosis.view',$data->id)}}" class="btn btn-sm btn-info">View</a>
                                             </td>                                      
                                         </tr>
                                         @endforeach

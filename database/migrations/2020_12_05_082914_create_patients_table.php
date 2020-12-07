@@ -18,7 +18,7 @@ class CreatePatientsTable extends Migration
             $table->string('name',255);
             $table->string('phone',15);
             $table->string('address',255);
-            $table->string('passwoard',50);
+            $table->string('password',50);
             $table->timestamps();
         });
     }

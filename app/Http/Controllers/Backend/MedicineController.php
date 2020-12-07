@@ -50,4 +50,12 @@ public function list()
         }
          return redirect()->back()->with('message',$message);
      }
+
+         //single data view
+    public function view($id)
+    {
+      $medicine=Medicine::find($id);
+      return view('backend.layouts.medicine_details.view_medicine',compact('medicine'));
+
+    } 
 }

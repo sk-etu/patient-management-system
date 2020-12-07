@@ -23,7 +23,7 @@
                                         @foreach($list as $data)
                                         <tr>
                                             <th scope="row">{{$data->id}}</th>
-                                            <td>{{$data->patient_name}}</td>
+                                            <td>{{$data->name}}</td>
                                             <td>{{$data->phone}}</td>
                                             <td>{{$data->address}}</td> 
                                             <td>{{$data->passwoard}}</td>

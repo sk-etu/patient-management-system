@@ -25,19 +25,26 @@ Route::get('/prescription','Backend\PrescriptionController@prescription')->name(
 Route::post('/prescription','Backend\PrescriptionController@createprescription')->name('prescription.store');
 Route::get('/prescription/list','Backend\PrescriptionController@list')->name('prescription.list');
 Route::get('/prescription/delete/{id}','Backend\PrescriptionController@delete')->name('prescription.delete');
-Route::get('/prescription/edit','Backend\PrescriptionController@edit')->name('prescription.edit');
+Route::get('/prescription/view/{id}','Backend\PrescriptionController@view')->name('prescription.view');
+//edit
+Route::get('/prescription/edit/{id}','Backend\PrescriptionController@edit')->name('prescription.edit');
+Route::put('/prescription/update/{id}','Backend\PrescriptionController@update')->name('prescription.update');
 
 
 //diagnosis
 Route::get('/diagnosis','Backend\DiagnosisController@diagnosis')->name('diagnosis');
 Route::post('/diagnosis','Backend\DiagnosisController@creatediagnosis')->name('diagnosis.store');
 Route::get('/diagnosis/list','Backend\DiagnosisController@list')->name('diagnosis.list');
+Route::get('/diagnosis/delete/{id}','Backend\DiagnosisController@delete')->name('diagnosis.delete');
+Route::get('/diagnosis/view/{id}','Backend\DiagnosisController@view')->name('diagnosis.view');
 
 //medicine
 Route::get('/medicine','Backend\MedicineController@medicine')->name('medicine');
 Route::post('/medicine','Backend\MedicineController@createmedicine')->name('medicine.store');
 Route::get('/medicine/list','Backend\MedicineController@list')->name('medicine.list');
 Route::get('/medicine/delete/{id}','Backend\MedicineController@delete')->name('medicine.delete');
+Route::get('/medicine/view/{id}','Backend\MedicineController@view')->name('medicine.view');
+
 
 //appointment
 // Frontend

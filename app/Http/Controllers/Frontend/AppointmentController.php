@@ -10,7 +10,7 @@ class AppointmentController extends Controller
 {
     public function appointment()
     {
-        return view('frontend.layouts.insert_appointment');
+        return view('frontend.master');
 
     }
 public function createappointment(Request $request)

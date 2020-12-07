@@ -17,11 +17,15 @@ class CreatePrescriptionsTable extends Migration
             $table->id();
             $table->string('patient_id',10);
             $table->string('patient_name',255);
-            $table->float('weight',5);
+            $table->string('gender');
+            $table->string('weight',5);
             $table->string('age',5);
             $table->string('bp');
+            $table->date('date');
             $table->string('medicine_id');
             $table->string('diagnosis_id');
+            $table->string('additional_instructions')->nullable();
+         
            
             $table->timestamps();
         });
