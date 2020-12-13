@@ -24,20 +24,12 @@
 
                 
                   <div class="form-group">
-                    <label for="patient_id">ID</label>
-                    <input name="patient_id"  placeholder="Enter patient id" type="number" class="form-control" id="patient_id" aria-describedby="emailHelp">
-                   </div>
-                  <div class="form-group">
-                    <label for="patient_name">Name</label>
-                    <input name="patient_name"  placeholder="Enter patient name" type="text" class="form-control" id="patient_name">
-                  </div>
-                  <div class="form-group">
-                    <label for="gender">Gender</label>
-                    <select id="gender" name="gender" class="form-control">
-                      <option value="#">Choose a Gender</option>
-                      <option value="male">Male</option>
-                      <option value="female">Female</option>
-                    </select>
+                        <label for="patient_id">Select patient</label>
+                        <select class="form-control" name="patient_id" id="id">
+                            @foreach($patients as $patient)
+                            <option value="{{$patient->id}}">{{$patient->name}}</option>
+                            @endforeach
+                        </select>
                   </div>
                   <div class="form-group">
                       <label for="date">Select Date</label>
@@ -48,21 +40,8 @@
                     <input  name="weight"  placeholder="Enter patient weight" type="number" class="form-control" id="weight" aria-describedby="emailHelp">
                     </div>
                   <div class="form-group">
-                    <label for="age">Age</label>
-                    <input name="age"  placeholder="Enter patient age"  type="number" class="form-control" id="age">
-                  </div>
-                  <div class="form-group">
                     <label for="bp">Blood Pressure</label>
                     <input  name="bp"  placeholder="Enter patient bp" type="text" class="form-control" id="bp" aria-describedby="emailHelp">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="medicine">Select Medicine Name</label>
-                        <select class="form-control" name="medicine_id" id="medicine">
-                            @foreach($medicines as $medicine)
-                            <option value="{{$medicine->id}}">{{$medicine->name}}</option>
-                            @endforeach
-                        </select>
                     </div>
 
 

@@ -5,14 +5,16 @@
 
         <div class="form-group">
             <p>
-            <label for="">Patient ID:</label>{{$prescription->patient_id}}
-            </p>
-
-            <p>
-            <label for="">Patient Name:</label> {{$prescription->patient_name}}
+            <label for="">Patient ID:</label>{{$prescription->patientrelation->id}}
             </p>
             <p>
-            <label for="">Patient Gender:</label> {{$prescription->gender}}
+            <label for="">Patient Name:</label>{{$prescription->patientrelation->name}}
+            </p>
+            <p>
+            <label for="">Patient Age:</label>{{$prescription->patientrelation->age}}
+            </p>
+            <p>
+            <label for="">Gender:</label>{{$prescription->patientrelation->gender}}
             </p>
             <p>
             <label for="">Date:</label>{{$prescription->date}}
@@ -20,19 +22,21 @@
             <p>
             <label for="">Patient Weight:</label>{{$prescription->weight}}
             </p>
-
-            <p>
-            <label for="">Patient Age:</label> {{$prescription->age}}
-            </p>
             <p>
             <label for="">Patient BP:</label>{{$prescription->bp}}
             </p>
 <!-- relational data -->
             <p>
-            <label for="">Medicine Name:</label> {{$prescription->medicinerelation->name}}
+            <label for="">Diagnosis Name:</label> {{$prescription->diagnosisrelation->name}}
             </p>
             <p>
-            <label for="">Diagnosis Name:</label> {{$prescription->diagnosisrelation->name}}
+            <label for="">Additional Instructions:</label> {{$prescription->additional_instructions}}
+            </p>
+            <p>
+            <label for="">Medicine:</label> {{$prescription->prescribe_medicinerelation->name}}
+            </p>
+            <p>
+            <label for="">Days:</label> {{$prescription->prescribe_medicinerelation->days}}
             </p>
         </div>
 

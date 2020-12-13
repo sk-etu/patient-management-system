@@ -15,9 +15,6 @@
                                             <tr>
                                                 <th>ID</th>
                                                 <th>Patient ID</th>
-                                                <th>Patient Name</th>
-                                                <th>Age</th>
-
                                                 <th>Action</th>
                                                 
                                             </tr>
@@ -26,9 +23,7 @@
                                         @foreach($list as $key=>$data)
                                             <tr>
                                                 <td>{{$key+1}}</td>
-                                                <td>{{$data->patient_id}}</td>
-                                                <td>{{$data->patient_name}}</td>
-                                                <td>{{$data->age}}</td>
+                                                <td>{{$data->patient_id}}</td>                                               
                                                 <td>
                                                 <a href="{{route('prescription.edit',$data->id)}}" class="btn btn-sm btn-info">Edit</a>
                                                 <a href="{{route('prescription.delete',$data->id)}}" class="btn btn-sm btn-info">Delete</a>

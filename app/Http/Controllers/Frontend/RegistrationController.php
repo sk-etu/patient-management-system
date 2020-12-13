@@ -19,6 +19,8 @@ class RegistrationController extends Controller
 
         $request->validate([
             'name'=>'required',
+            'gender'=>'required',
+            'age'=>'required',
             'phone'=>'required',
             'address'=>'required',
             'password'=>'required'
@@ -28,6 +30,8 @@ class RegistrationController extends Controller
 
     Patient::create([
         'name'=> $request->input('name'),
+        'gender'=>$request->input('gender'),
+        'age'=>$request->input('age'),
         'phone'=>$request->input('phone'),
         'address'=>$request->input('address'),
         'password'=>$request->input('password')
@@ -45,4 +49,65 @@ class RegistrationController extends Controller
         $list=Patient::all();
         return view('backend.layouts.patient_details.patient_list', compact('list'));
     }
+
+     // delete data
+  public function delete($id)
+  {
+     $patients=Patient::find($id);
+     if(!empty($patients))
+     {
+         $patients->delete();
+         $message="Patient deleted Successfully";
+     }else{
+         $message="No data found.";
+     }
+      return redirect()->back()->with('message',$message);
+  }
+
+
+
+      //single data view
+      public function view($id)
+      {
+        $patients=Patient::find($id);
+        return view('backend.layouts.patient_details.view_patient',compact('patients'));
+  
+      } 
+
+
+          //Edit data
+    public function edit($id)
+    {
+      $patients=Patient::find($id);
+
+
+      return view ('backend.layouts.patient_details.edit_patient',compact('patients'));
+    }
+
+
+     // insert update form
+     public function update(Request $request,$id)
+     {
+       $request->validate([
+        'name'=>'required',
+        'gender'=>'required',
+        'age'=>'required',
+        'phone'=>'required',
+        'address'=>'required',
+        'password'=>'required'
+         ]);
+        $patients=Patient::find($id);
+        $patients->update([
+            'name'=> $request->input('name'),
+            'gender'=>$request->input('gender'),
+            'age'=>$request->input('age'),
+            'phone'=>$request->input('phone'),
+            'address'=>$request->input('address'),
+            'password'=>$request->input('password')
+        ]);
+ 
+        return redirect()->back()->with('message','Patient Updated Successfully.');
+     }
+
+  
 }

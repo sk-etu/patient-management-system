@@ -33,7 +33,7 @@ public function createmedicine(Request $request)
 
 public function list()
 {
-    $list=Medicine::all();
+    $list=Medicine::paginate(5);
     return view('backend.layouts.medicine_details.medicine_list',compact('list'));
 }
 

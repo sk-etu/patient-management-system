@@ -16,7 +16,8 @@
      <link rel="stylesheet" href="{{asset('/frontend/css/animate.css')}}">
      <link rel="stylesheet" href="{{asset('/frontend/css/owl.carousel.css')}}">
      <link rel="stylesheet" href="{{asset('/frontend/css/owl.theme.default.min.css')}}">
-     
+     <!-- <link rel="stylesheet" href="{{asset('/frontend/css/style.css')}}">
+      -->
      <!-- MAIN CSS -->
      <link rel="stylesheet" href="{{asset('/frontend/css/tooplate-style.css')}}">
 
@@ -46,7 +47,7 @@
 
      <!-- Appointment -->
 
-     <main class="app-content">
+<main class="app-content">
 
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">

@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use App\Models\Prescription;
 use App\Models\Diagnosis_list;
 use App\Models\Medicine;
+use App\Models\patient;
+use App\Models\Prescribe_medicine;
 use Illuminate\Http\Request;
 
 class PrescriptionController extends Controller
@@ -17,8 +19,8 @@ class PrescriptionController extends Controller
     $diagnoses=Diagnosis_list::select(['name','id'])->get();
     // dd($diagnoses);
     
-    $medicines=Medicine::select(['name','id'])->get();
-    return view ('backend.layouts.prescription_details.prescription',compact('diagnoses','medicines'));
+    $patients=patient::select(['name','id'])->get();
+    return view ('backend.layouts.prescription_details.prescription',compact('diagnoses','patients'));
   } 
 
 
@@ -29,14 +31,10 @@ class PrescriptionController extends Controller
 
     // validation
       $request->validate([
-          'patient_id'=>'required|numeric',
-          'patient_name'=>'required',
-          'gender'=>'required',
+          'patient_id'=>'required',
           'weight'=>'required',
-          'age'=>'required',
           'bp'=>'required',
           'date'=>'required',
-          'medicine_id'=>'required',
           'diagnosis_id'=>'required'
       ]);
 
@@ -44,19 +42,15 @@ class PrescriptionController extends Controller
           // in form passing data
    $data = Prescription::create([
         'patient_id'=>$request->input('patient_id'),
-        'patient_name'=>$request->input('patient_name'),
-        'gender'=>$request->input('gender'),
         'weight'=>$request->input('weight'),
-        'age'=>$request->input('age'),
         'bp'=>$request->input('bp'),
         'date'=>$request->input('date'),
-        'medicine_id'=>$request->input('medicine_id'),
         'diagnosis_id'=>$request->input('diagnosis_id'),
         'additional_instructions'=>$request->input('additional_instructions')
 
     ]);
 
-    return redirect()->back()->with('message','Prescription Created Successfully.');
+    return redirect()->route('prescribe_medicine',['p_id'=>$data->id])->with('message','Prescription Created Successfully.');
 
   }
 
@@ -67,8 +61,9 @@ class PrescriptionController extends Controller
     $list=prescription::all();
           // table relation
     $diagnoses=Diagnosis_list::with('diagnosisrelation');
-    $medicines=Medicine::with('medicinerelation');
-    return view('backend.layouts.prescription_details.prescription_list',compact('list','diagnoses','medicines'));
+    $patients=Patient::with('patientrelation');
+    $prescribe_medicine=Prescribe_medicine::with('prescribe_medicinerelation');
+    return view('backend.layouts.prescription_details.prescription_list',compact('list','prescribe_medicine','diagnoses'));
 
   }
 
@@ -91,7 +86,8 @@ class PrescriptionController extends Controller
     //single data view
     public function view($id)
     {
-      $prescription=prescription::find($id);
+      $prescription=prescription::with(['prescribe_medicinerelation.medicinerelation'])->find($id);
+      //dd($prescription);
       return view('backend.layouts.prescription_details.view_prescription',compact('prescription'));
 
     } 
@@ -102,36 +98,28 @@ class PrescriptionController extends Controller
     {
       $prescription=Prescription::find($id);
       $diagnoses=Diagnosis_list::all();
-      $medicines=Medicine::all();
+ 
 
 
-      return view ('backend.layouts.prescription_details.edit_prescription',compact('prescription','diagnoses','medicines'));
+      return view ('backend.layouts.prescription_details.edit_prescription',compact('prescription','diagnoses'));
     }
 
     // insert update form
     public function update(Request $request,$id)
     {
       $request->validate([
-        'patient_id'=>'required|numeric',
-        'patient_name'=>'required',
-        'gender'=>'required',
+        'patient_id'=>'required',
         'weight'=>'required',
-        'age'=>'required',
         'bp'=>'required',
         'date'=>'required',
-        'medicine_id'=>'required',
         'diagnosis_id'=>'required'
         ]);
        $prescription=Prescription::find($id);
        $prescription->update([
         'patient_id'=>$request->input('patient_id'),
-        'patient_name'=>$request->input('patient_name'),
-        'gender'=>$request->input('gender'),
         'weight'=>$request->input('weight'),
-        'age'=>$request->input('age'),
         'bp'=>$request->input('bp'),
         'date'=>$request->input('date'),
-        'medicine_id'=>$request->input('medicine_id'),
         'diagnosis_id'=>$request->input('diagnosis_id'),
         'additional_instructions'=>$request->input('additional_instructions')
        ]);

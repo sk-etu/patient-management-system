@@ -16,7 +16,7 @@ class CreateDiagnosisListsTable extends Migration
         Schema::create('diagnosis_lists', function (Blueprint $table) {
             $table->id();
             $table->string('name',255);
-            $table->string('type',15);
+            $table->string('type');
             $table->timestamps();
         });
     }

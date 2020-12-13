@@ -7,9 +7,9 @@
                     </div>
                          
                     <div class="col-md-8 col-sm-7 text-align-right">
-                         <span class="phone-icon"><i class="fa fa-phone"></i> 010-060-0160</span>
-                         <span class="date-icon"><i class="fa fa-calendar-plus-o"></i> 6:00 AM - 10:00 PM (Mon-Fri)</span>
-                         <span class="email-icon"><i class="fa fa-envelope-o"></i> <a href="#">info@company.com</a></span>
+                         <span class="phone-icon"><i class="fa fa-phone"></i> 01725-710843</span>
+                         <span class="date-icon"><i class="fa fa-calendar-plus-o"></i> 10:00 AM - 8:00 PM (Sun-Thu)</span>
+                         <span class="email-icon"><i class="fa fa-envelope-o"></i> <a href="#">health@gmail.com</a></span>
                     </div>
 
                </div>
@@ -36,8 +36,7 @@
                     <ul class="nav navbar-nav navbar-right">
                          <li><a href="{{route('home')}}" class="smoothScroll">Home</a></li>
                          <li><a href="{{route('about')}}" class="smoothScroll">About Us</a></li>
-                         <li><a href="#news" class="smoothScroll">Notification</a></li>
-                         <li><a href="#google-map" class="smoothScroll">Contact</a></li>
+                         <li><a href="{{route('notification.view')}}" class="smoothScroll">Notification</a></li>
                          <li><a href="{{route('registration')}}" class="smoothScroll">Registration</a></li>
                          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
                               Make A appointment

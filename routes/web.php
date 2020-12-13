@@ -29,6 +29,15 @@ Route::get('/prescription/view/{id}','Backend\PrescriptionController@view')->nam
 //edit
 Route::get('/prescription/edit/{id}','Backend\PrescriptionController@edit')->name('prescription.edit');
 Route::put('/prescription/update/{id}','Backend\PrescriptionController@update')->name('prescription.update');
+// prescribe_medicine
+Route::get('/prescribe_medicine','Backend\Prescribe_medicineController@prescribe_medicine')->name('prescribe_medicine');
+Route::post('/prescribe_medicine','Backend\Prescribe_medicineController@createprescribe_medicine')->name('prescribe_medicine.store');
+Route::get('/prescribe_medicine/list','Backend\Prescribe_medicineController@list')->name('prescribe_medicine.list');
+
+
+
+
+
 
 
 //diagnosis
@@ -46,12 +55,26 @@ Route::get('/medicine/delete/{id}','Backend\MedicineController@delete')->name('m
 Route::get('/medicine/view/{id}','Backend\MedicineController@view')->name('medicine.view');
 
 
+//notification
+Route::get('/notification','Backend\NotificationController@notification')->name('notification');
+Route::post('/notification','Backend\NotificationController@createnotification')->name('notification.store');
+Route::get('/notification/list','Backend\NotificationController@list')->name('notification.list');
+Route::get('/notification/delete/{id}','Backend\NotificationController@delete')->name('notification.delete');
+Route::get('/notification/view','Backend\NotificationController@view')->name('notification.view');
+//edit
+Route::get('/notification/edit/{id}','Backend\NotificationController@edit')->name('notification.edit');
+Route::put('/notification/update/{id}','Backend\NotificationController@update')->name('notification.update');
+
+
+
 //appointment
 // Frontend
 Route::get('/appointment','Frontend\AppointmentController@appointment')->name('appointment');
 Route::post('/appointment','Frontend\AppointmentController@createappointment')->name('appointment.store');
 // Backend
 Route::get('/appointment/list','Frontend\AppointmentController@list')->name('appointment.list');
+
+
 
 
 //Doctor
@@ -63,11 +86,20 @@ Route::get('/doctor','Backend\DoctorController@doctor')->name('doctor');
 Route::get('/home','Frontend\HomeController@index')->name('home');
 Route::get('/about','Frontend\HomeController@about')->name('about');
 
+
+
 //Registration+Patient
 Route::get('/patient_registration','Frontend\RegistrationController@registration')->name('registration');
 Route::post('/patient_registration','Frontend\RegistrationController@createregistration')->name('patient.store');
 // Backend
 Route::get('/patient/list','Frontend\RegistrationController@list')->name('patient.list');
+Route::get('/patient/view/{id}','Frontend\RegistrationController@view')->name('patient.view');
+Route::get('/patient/delete/{id}','Frontend\RegistrationController@delete')->name('patient.delete');
+//edit
+Route::get('/patient/edit/{id}','Frontend\RegistrationController@edit')->name('patient.edit');
+Route::put('/patient/update/{id}','Frontend\RegistrationController@update')->name('patient.update');
+
+
 
 //Login
 Route::get('login','Frontend\LoginController@index')->name('login');

@@ -30,6 +30,7 @@
                                         @endforeach
                                         </tbody>
                                     </table>
+                                    {{$list->links()}}
                                 </div>
                                 <!-- END DATA TABLE-->
                             </div>

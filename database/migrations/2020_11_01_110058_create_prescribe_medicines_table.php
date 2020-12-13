@@ -15,6 +15,7 @@ class CreatePrescribeMedicinesTable extends Migration
     {
         Schema::create('prescribe_medicines', function (Blueprint $table) {
             $table->id();
+            $table->string('prescription_id',255);
             $table->string('medicine_id',255);
             $table->string('days',5);
             $table->string('dosages');

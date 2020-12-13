@@ -28,7 +28,7 @@
                         
                         <li>
                             <a href="{{route('prescription.list')}}">
-                                <i></i>Prescription_list</a>
+                                <i></i>Prescription list</a>
                         </li>
                     </ul>
                     </li>
@@ -48,7 +48,7 @@
                             </li>
                             <li>
                                 <a href="{{route('diagnosis.list')}}">
-                                <i></i>Diagnosis_list</a>
+                                <i></i>Diagnosis list</a>
                             </li>
                         </ul>
                     </li> 
@@ -69,7 +69,7 @@
                         
                         <li>
                             <a href="{{route('medicine.list')}}">
-                                <i></i>medicine_list</a>
+                                <i></i>medicine list</a>
                         </li>
                     </ul>
                     </li>                   
@@ -88,14 +88,14 @@
                         
                         <li>
                             <a href="{{route('appointment.list')}}">
-                                <i></i>Appointment_list</a>
+                                <i></i>Appointment list</a>
                         </li>
                     </ul>
                     </li>
 
   <!-- Doctor -->
                     <li>
-                        <div href="#" style="margin-top: 15px;" data-toggle="collapse" data-target="#appointment" aria-expanded="true">
+                        <div href="#" style="margin-top: 15px;" data-toggle="collapse" data-target="#doctor" aria-expanded="true">
                              <i class="fa fa-tags"></i>
                              Doctor
                              <i class="fa fa-caret-down"></i>
@@ -110,8 +110,29 @@
                     </ul>
                     </li>
 
+<!-- Notification -->
+
+<li>
+<div href="#" style="margin-top: 15px;" data-toggle="collapse" data-target="#notification" aria-expanded="true">
+        <i class="fa fa-tags"></i>
+        Notification
+        <i class="fa fa-caret-down"></i>
+</div>                        
+    <ul id="notification" class="collapse">
+        <li>
+            <a href="{{route('notification')}}">
+                <i></i>Insert Notification</a>
+        </li>
+        
+        <li>
+            <a href="{{route('notification.list')}}">
+                <i></i>Notification list</a>
+        </li>
+    </ul>
+    </li>        
+
   <!-- patient -->
-  <li>
+                <li>
                         <div href="#" style="margin-top: 15px;" data-toggle="collapse" data-target="#Patient" aria-expanded="true">
                              <i class="fa fa-tags"></i>
                              Patient
@@ -125,10 +146,10 @@
                         
                         <li>
                             <a href="{{route('patient.list')}}">
-                                <i></i>Patient_list</a>
+                                <i></i>Patient list</a>
                         </li>
                     </ul>
-                    </li>
+                </li>
 
                     </ul>
                 </nav>

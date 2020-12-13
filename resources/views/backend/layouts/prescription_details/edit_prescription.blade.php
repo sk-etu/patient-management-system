@@ -29,18 +29,6 @@
                     <input value="{{$prescription->patient_id}}" name="patient_id"  placeholder="Enter patient id" type="number" class="form-control" id="patient_id" aria-describedby="emailHelp">
                    </div>
                   <div class="form-group">
-                    <label for="patient_name">Name</label>
-                    <input value="{{$prescription->patient_name}}" name="patient_name"  placeholder="Enter patient name" type="text" class="form-control" id="patient_name">
-                  </div>
-                  <div class="form-group">
-                    <label for="gender">Gender</label>
-                    <select value="{{$prescription->gender}}" id="gender" name="gender" class="form-control">
-                      <option value="#">Choose a Gender</option>
-                      <option value="male">Male</option>
-                      <option value="female">Female</option>
-                    </select>
-                  </div>
-                  <div class="form-group">
                       <label for="date">Select Date</label>
                       <input value="{{$prescription->date}}" type="date" name="date" value="" class="form-control">
                   </div>
@@ -49,21 +37,8 @@
                     <input value="{{$prescription->weight}}" name="weight"  placeholder="Enter patient weight" type="number" class="form-control" id="weight" aria-describedby="emailHelp">
                     </div>
                   <div class="form-group">
-                    <label for="age">Age</label>
-                    <input value="{{$prescription->age}}" name="age"  placeholder="Enter patient age"  type="number" class="form-control" id="age">
-                  </div>
-                  <div class="form-group">
                     <label for="bp">Blood Pressure</label>
                     <input value="{{$prescription->bp}}" name="bp"  placeholder="Enter patient bp" type="text" class="form-control" id="bp" aria-describedby="emailHelp">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="medicine">Select Medicine Name</label>
-                        <select class="form-control" name="medicine_id" id="medicine">
-                            @foreach($medicines as $medicine)
-                            <option @if($prescription->medicine_id==$medicine->id) selected @endif value="{{$medicine->id}}">{{$medicine->name}}</option>
-                            @endforeach
-                        </select>
                     </div>
 
 

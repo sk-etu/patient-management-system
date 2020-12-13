@@ -12,11 +12,7 @@
                                             <tr>
                                             <th>ID</th>                                          
                                             <th>Patient Name</th>
-                                            <th>Phone</th>
-                                            <th>Address</th>
-                                            <th>Passwoard</th>
                                             <th>Action</th>
-
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -24,13 +20,10 @@
                                         <tr>
                                             <th scope="row">{{$data->id}}</th>
                                             <td>{{$data->name}}</td>
-                                            <td>{{$data->phone}}</td>
-                                            <td>{{$data->address}}</td> 
-                                            <td>{{$data->passwoard}}</td>
                                             <td>
-                                                <a href="" class="btn btn-sm btn-info">Edit</a>
-                                                <a href="" class="btn btn-sm btn-info">Delete</a>
-                                                <a href="" class="btn btn-sm btn-info">View</a>
+                                                <a href="{{route('patient.edit',$data->id)}}" class="btn btn-sm btn-info">Edit</a>
+                                                <a href="{{route('patient.delete',$data->id)}}" class="btn btn-sm btn-info">Delete</a>
+                                                <a href="{{route('patient.view',$data->id)}}" class="btn btn-sm btn-info">View</a>
                                             </td>                                       
                                         </tr>
                                         @endforeach

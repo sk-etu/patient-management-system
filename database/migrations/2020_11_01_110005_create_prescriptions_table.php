@@ -16,14 +16,11 @@ class CreatePrescriptionsTable extends Migration
         Schema::create('prescriptions', function (Blueprint $table) {
             $table->id();
             $table->string('patient_id',10);
-            $table->string('patient_name',255);
-            $table->string('gender');
             $table->string('weight',5);
-            $table->string('age',5);
             $table->string('bp');
             $table->date('date');
-            $table->string('medicine_id');
             $table->string('diagnosis_id');
+            $table->string('prescribe_medicine_id')->default();
             $table->string('additional_instructions')->nullable();
          
            
