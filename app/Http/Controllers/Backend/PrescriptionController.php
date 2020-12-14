@@ -87,7 +87,7 @@ class PrescriptionController extends Controller
     public function view($id)
     {
       $prescription=prescription::with(['prescribe_medicinerelation.medicinerelation'])->find($id);
-      //dd($prescription);
+      // dd($prescription);
       return view('backend.layouts.prescription_details.view_prescription',compact('prescription'));
 
     } 

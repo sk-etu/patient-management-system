@@ -26,19 +26,29 @@
             <label for="">Patient BP:</label>{{$prescription->bp}}
             </p>
 <!-- relational data -->
+
             <p>
             <label for="">Diagnosis Name:</label> {{$prescription->diagnosisrelation->name}}
             </p>
             <p>
             <label for="">Additional Instructions:</label> {{$prescription->additional_instructions}}
             </p>
-            <p>
-            <label for="">Medicine:</label> {{$prescription->prescribe_medicinerelation->name}}
-            </p>
-            <p>
-            <label for="">Days:</label> {{$prescription->prescribe_medicinerelation->days}}
-            </p>
-        </div>
+
+<!-- prescribe -->
+        @foreach($prescription->prescribe_medicinerelation as $med)
+       
+                    <p>
+                    <label for="">Medicine:</label> {{$med->medicinerelation->name}}
+                    </p>
+                    <p>
+                    <label for="">Days:</label> {{$med->days}}
+                    </p>
+                    <p>
+                    <label for="">Dosages:</label> {{$med->dosages}}
+                    </p>
+        @endforeach
+                </div>
+  
 
 </main>
 @stop

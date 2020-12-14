@@ -44,12 +44,13 @@
                     <input  name="bp"  placeholder="Enter patient bp" type="text" class="form-control" id="bp" aria-describedby="emailHelp">
                     </div>
 
-
+                      <!-- https://select2.org/tagging -->
+                      
                     <div class="form-group">
                         <label for="diagnosis">Select Diagnosis Name</label>
-                        <select class="form-control" name="diagnosis_id" id="diagnosis">
+                        <select  multiple="multiple" class="form-control" name="diagnosis_id" id="diagnosis">
                             @foreach($diagnoses as $diagnosis)
-                            <option value="{{$diagnosis->id}}">{{$diagnosis->name}}</option>
+                            <option selected="selected" value="{{$diagnosis->id}}">{{$diagnosis->name}}</option>
                             @endforeach
                         </select>
                     </div>

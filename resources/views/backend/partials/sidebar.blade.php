@@ -93,22 +93,7 @@
                     </ul>
                     </li>
 
-  <!-- Doctor -->
-                    <li>
-                        <div href="#" style="margin-top: 15px;" data-toggle="collapse" data-target="#doctor" aria-expanded="true">
-                             <i class="fa fa-tags"></i>
-                             Doctor
-                             <i class="fa fa-caret-down"></i>
-                        </div>                        
-                    <ul id="doctor" class="collapse">
-                        <li>
-                            <a href="{{route('doctor')}}">
-                                <i></i>Insert Doctor</a>
-                        </li>
-                        
-                      
-                    </ul>
-                    </li>
+
 
 <!-- Notification -->
 

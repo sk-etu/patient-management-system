@@ -15,8 +15,5 @@ class Prescribe_medicine extends Model
        return $this->belongsTo(Medicine::class,'medicine_id','id');
     }
 
-   //  public function prescriptionrelation()
-   //  {
-   //     return $this->hasMany(Prescription::class,'prescription_id','id');
-   //  }
+
 }

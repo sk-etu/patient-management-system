@@ -13,11 +13,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
+//admin panel login
+Route::get('/login','Backend\LoginController@login')->name('login');
+Route::post('/login','Backend\LoginController@loginProcess')->name('login.do');
+
+//group
+Route::group(['middleware'=>'auth'],function(){
+
+//dashboard
 Route::get('/admin','Backend\HomeController@index')->name('dashboard');
+//logout
+Route::get('/logout','Backend\LoginController@logout')->name('logout');
 
 
 //prescription
@@ -33,10 +40,6 @@ Route::put('/prescription/update/{id}','Backend\PrescriptionController@update')-
 Route::get('/prescribe_medicine','Backend\Prescribe_medicineController@prescribe_medicine')->name('prescribe_medicine');
 Route::post('/prescribe_medicine','Backend\Prescribe_medicineController@createprescribe_medicine')->name('prescribe_medicine.store');
 Route::get('/prescribe_medicine/list','Backend\Prescribe_medicineController@list')->name('prescribe_medicine.list');
-
-
-
-
 
 
 
@@ -77,8 +80,14 @@ Route::get('/appointment/list','Frontend\AppointmentController@list')->name('app
 
 
 
-//Doctor
-Route::get('/doctor','Backend\DoctorController@doctor')->name('doctor');
+});
+
+
+
+
+
+
+
 
 
 // Frontend
@@ -102,4 +111,4 @@ Route::put('/patient/update/{id}','Frontend\RegistrationController@update')->nam
 
 
 //Login
-Route::get('login','Frontend\LoginController@index')->name('login');
+Route::get('/customer/login','Frontend\LoginController@index');
