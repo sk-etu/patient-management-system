@@ -33,6 +33,10 @@
                                   <option value="female">Female</option>
                                 </select>
                               </div>
+                              <div class="col-md-12 col-sm-12">
+                                <label for="email">Email</label>
+                                <input  name="email" placeholder="Enter email" type="email" class="form-control" id="email" aria-describedby="emailHelp">         
+                              </div>
                               <div class="col-md-6 col-sm-12">
                                 <label for="age">Age</label>
                                 <input  name="age" placeholder="Enter Age" type="number" class="form-control" id="age" aria-describedby="emailHelp">         
@@ -58,7 +62,7 @@
 </div>
 
         <div class="container signin">
-          <p>Already have an account? <a href="{{route('login')}}">Sign in</a>.</p>
+          <p>Already have an account? <a href="{{route('frontend.login')}}">Sign in</a>.</p>
         </div>
 </form>
 

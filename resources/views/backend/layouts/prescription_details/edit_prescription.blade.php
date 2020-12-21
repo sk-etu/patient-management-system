@@ -50,7 +50,13 @@
                             @endforeach
                         </select>
                     </div>
+                    
 
+                    <div class="form -group">
+                        <label for="chief_complaint">Additional Instructions</label>
+                        <textarea name="chief_complaint" class="form-control" id="chief_complaint">{{$prescription->chief_complaint}}</textarea>
+            
+                    </div>
 
                     <div class="form -group">
                         <label for="additional_instructions">Additional Instructions</label>

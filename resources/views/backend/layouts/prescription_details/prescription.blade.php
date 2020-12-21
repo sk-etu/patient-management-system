@@ -22,12 +22,20 @@
                 <form action="{{route('prescription.store')}}" method="post">
                 @csrf
 
+                <div class="form-group">
+                        <label for="patient_id">Select patient ID</label>
+                        <select class="form-control" name="patient_id" id="patient_id">
+                            @foreach($patients as $patient)
+                            <option value="{{$patient->id}}">{{$patient->id}}</option>
+                            @endforeach
+                        </select>
+                  </div>
                 
                   <div class="form-group">
-                        <label for="patient_id">Select patient</label>
-                        <select class="form-control" name="patient_id" id="id">
-                            @foreach($patients as $patient)
-                            <option value="{{$patient->id}}">{{$patient->name}}</option>
+                        <label for="user_id">Select patient</label>
+                        <select class="form-control" name="user_id" id="user_id">
+                            @foreach($users as $user)
+                            <option value="{{$user->id}}">{{$user->name}}</option>
                             @endforeach
                         </select>
                   </div>
@@ -44,18 +52,12 @@
                     <input  name="bp"  placeholder="Enter patient bp" type="text" class="form-control" id="bp" aria-describedby="emailHelp">
                     </div>
 
-                      <!-- https://select2.org/tagging -->
-                      
-                    <div class="form-group">
-                        <label for="diagnosis">Select Diagnosis Name</label>
-                        <select  multiple="multiple" class="form-control" name="diagnosis_id" id="diagnosis">
-                            @foreach($diagnoses as $diagnosis)
-                            <option selected="selected" value="{{$diagnosis->id}}">{{$diagnosis->name}}</option>
-                            @endforeach
-                        </select>
+                    <div class="form -group">
+                        <label for="chief_complaint">Chief Complaint </label>
+                        <textarea name="chief_complaint" class="form-control" id="chief_complaint"></textarea>
+            
                     </div>
-
-
+                      
                     <div class="form -group">
                         <label for="additional_instructions">Additional Instructions</label>
                         <textarea name="additional_instructions" placeholder="Enter additional instructions" class="form-control" id="additional_instructions"></textarea>

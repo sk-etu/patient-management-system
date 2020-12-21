@@ -15,8 +15,8 @@ class CreateReportsTable extends Migration
     {
         Schema::create('reports', function (Blueprint $table) {
             $table->id();
-            $table->string('patient_id');
-            $table->string('doctor_id');
+            $table->foreignId('patient_id');
+            $table->foreignId('doctor_id');
             $table->string('patient_name',255);
             $table->string('phone_no',15);
             $table->string('date');

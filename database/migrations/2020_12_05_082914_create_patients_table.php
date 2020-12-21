@@ -15,12 +15,11 @@ class CreatePatientsTable extends Migration
     {
         Schema::create('patients', function (Blueprint $table) {
             $table->id();
-            $table->string('name',255);
+            $table->foreignId('user_id');
             $table->string('age');
             $table->string('phone',15);
             $table->string('address',255);
             $table->string('gender');
-            $table->string('password',50);
             $table->timestamps();
         });
     }

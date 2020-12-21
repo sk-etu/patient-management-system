@@ -25,6 +25,7 @@
         
                                                 <a href="{{route('medicine.delete',$data->id)}}" class="btn btn-sm btn-info">Delete</a>
                                                 <a href="{{route('medicine.view',$data->id)}}" class="btn btn-sm btn-info">View</a>
+                                                <a href="{{route('medicine.edit',$data->id)}}" class="btn btn-sm btn-info">Edit</a>
                                             </td>                                      
                                         </tr>
                                         @endforeach

@@ -15,8 +15,8 @@ use Illuminate\Support\Facades\Route;
 
 
 //admin panel login
-Route::get('/login','Backend\LoginController@login')->name('login');
-Route::post('/login','Backend\LoginController@loginProcess')->name('login.do');
+Route::get('/login','Backend\UserController@login')->name('login');
+Route::post('/login','Backend\UserController@loginProcess')->name('login.do');
 
 //group
 Route::group(['middleware'=>'auth'],function(){
@@ -24,7 +24,7 @@ Route::group(['middleware'=>'auth'],function(){
 //dashboard
 Route::get('/admin','Backend\HomeController@index')->name('dashboard');
 //logout
-Route::get('/logout','Backend\LoginController@logout')->name('logout');
+Route::get('/logout','Backend\UserController@logout')->name('logout');
 
 
 //prescription
@@ -56,6 +56,9 @@ Route::post('/medicine','Backend\MedicineController@createmedicine')->name('medi
 Route::get('/medicine/list','Backend\MedicineController@list')->name('medicine.list');
 Route::get('/medicine/delete/{id}','Backend\MedicineController@delete')->name('medicine.delete');
 Route::get('/medicine/view/{id}','Backend\MedicineController@view')->name('medicine.view');
+//edit
+Route::get('/medicine/edit/{id}','Backend\MedicineController@edit')->name('medicine.edit');
+Route::put('/medicine/update/{id}','Backend\MedicineController@update')->name('medicine.update');
 
 
 //notification
@@ -69,37 +72,13 @@ Route::get('/notification/edit/{id}','Backend\NotificationController@edit')->nam
 Route::put('/notification/update/{id}','Backend\NotificationController@update')->name('notification.update');
 
 
-
 //appointment
-// Frontend
-Route::get('/appointment','Frontend\AppointmentController@appointment')->name('appointment');
-Route::post('/appointment','Frontend\AppointmentController@createappointment')->name('appointment.store');
 // Backend
 Route::get('/appointment/list','Frontend\AppointmentController@list')->name('appointment.list');
 
 
 
-
-});
-
-
-
-
-
-
-
-
-
-// Frontend
-// Home-About
-Route::get('/home','Frontend\HomeController@index')->name('home');
-Route::get('/about','Frontend\HomeController@about')->name('about');
-
-
-
 //Registration+Patient
-Route::get('/patient_registration','Frontend\RegistrationController@registration')->name('registration');
-Route::post('/patient_registration','Frontend\RegistrationController@createregistration')->name('patient.store');
 // Backend
 Route::get('/patient/list','Frontend\RegistrationController@list')->name('patient.list');
 Route::get('/patient/view/{id}','Frontend\RegistrationController@view')->name('patient.view');
@@ -109,6 +88,45 @@ Route::get('/patient/edit/{id}','Frontend\RegistrationController@edit')->name('p
 Route::put('/patient/update/{id}','Frontend\RegistrationController@update')->name('patient.update');
 
 
+});
 
-//Login
-Route::get('/customer/login','Frontend\LoginController@index');
+
+
+
+
+
+// Frontend
+Route::group(['middleware'=>'auth'],function(){
+
+
+//logout
+Route::get('/customer/logout','Frontend\UserController@logout')->name('frontend.logout');
+
+//appointment
+// Frontend
+Route::get('/appointment','Frontend\AppointmentController@appointment')->name('appointment');
+Route::post('/appointment','Frontend\AppointmentController@createappointment')->name('appointment.store');
+
+    
+Route::get('/notification/view','Backend\NotificationController@view')->name('notification.view');
+});
+
+
+
+
+//Login user
+Route::get('/customer/login','Frontend\UserController@login')->name('frontend.login');
+Route::post('/customer/login','Frontend\UserController@loginProcess')->name('frontend.login.do');
+
+
+  
+// Home-About
+Route::get('/home','Frontend\HomeController@index')->name('home');
+Route::get('/about','Frontend\HomeController@about')->name('about');
+
+
+
+//Registration+Patient
+Route::get('/patient_registration','Frontend\RegistrationController@registration')->name('registration');
+Route::post('/patient_registration','Frontend\RegistrationController@createregistration')->name('patient.store');
+

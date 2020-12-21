@@ -37,10 +37,22 @@
                          <li><a href="{{route('home')}}" class="smoothScroll">Home</a></li>
                          <li><a href="{{route('about')}}" class="smoothScroll">About Us</a></li>
                          <li><a href="{{route('notification.view')}}" class="smoothScroll">Notification</a></li>
-                         <li><a href="{{route('registration')}}" class="smoothScroll">Registration</a></li>
+                         @guest
+                       
+                         <li><a href="{{route('frontend.login')}}" class="smoothScroll">Login</a></li>
+                         
+                         @endguest
                          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
                               Make A appointment
-                         </button>                          
+                         </button>  
+                         
+                         @auth
+            <!-- Button trigger modal -->   
+                         <a href="{{route('frontend.logout')}}" type="button" class="btn btn-primary">
+                              Logout
+                         </a>
+
+                              @endauth                     
                     </ul>
 
 

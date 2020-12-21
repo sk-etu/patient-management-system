@@ -58,4 +58,35 @@ public function list()
       return view('backend.layouts.medicine_details.view_medicine',compact('medicine'));
 
     } 
+
+
+    //single data edit
+    public function edit($id)
+    {
+        $medicine=Medicine::find($id);
+
+        return view('backend.layouts.medicine_details.edit_medicine',compact('medicine'));
+
+    }
+
+    public function update(Request $request,$id)
+    {
+
+
+        $request->validate([
+            'name'=>'required',
+            'generic_name'=>'required'
+        ]);
+
+        $medicine=Medicine::find($id);
+        $medicine->update([
+
+            'name'=> $request->input('name'),
+            'generic_name'=>$request->input('generic_name')
+
+
+        ]);
+        
+            return redirect()->back()->with('message','medicine update sucessfully' );
+    }
 }

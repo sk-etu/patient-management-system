@@ -3,7 +3,7 @@ body{
   margin: 0;
   padding: 0;
   font-family: sans-serif;
-  background: url("/public/frontend/images/news-image.jpg");
+  background-image: url("http://localhost/pms/public /frontend/images/bg.jpg");
   background-size: cover;
 }
 .login-box{

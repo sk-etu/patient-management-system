@@ -13,18 +13,14 @@
               @endif
 
 
-              @if($errors->any())
-                  @foreach($errors->all() as $er)
-                      <p class="alert alert-danger">{{$er}}</p>
-                  @endforeach
-              @endif
-
                 <form action="{{route('prescribe_medicine.store')}}" method="post">
                     @csrf
                     <input type="hidden" name="p_id" value="{{request()->p_id}}">
                     <div class="form-group">
                         <label for="medicine_id">Select Medicine Name</label>
                         <select class="form-control" name="medicine_id" id="medicine_id">
+
+                           <option value='' >None</option>
                             @foreach($medicines as $medicine)
                             <option value="{{$medicine->id}}">{{$medicine->name}}</option>
                             @endforeach
@@ -40,6 +36,18 @@
                     <label for="dosages">Dosages</label>
                     <input  name="dosages"  placeholder="Enter dosages" type="text" class="form-control" id="dosages" aria-describedby="emailHelp">
                   
+                  </div>
+
+                  
+                  <div class="form-group">
+                        <label for="diagnosis_id">Select Test Name</label>
+                        <select class="form-control" name="diagnosis_id" id="diagnosis_id">
+
+                        <option value='' >None</option>
+                            @foreach($diagnoses as $diagnosis)
+                            <option value="{{$diagnosis->id}}">{{$diagnosis->name}}</option>
+                            @endforeach
+                        </select>
                   </div>
                   <button type="submit" class="btn btn-primary">Submit</button>
                 </form>

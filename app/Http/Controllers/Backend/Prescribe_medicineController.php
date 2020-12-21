@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\Controller;
 use App\Models\Prescribe_medicine;
 use App\Models\Medicine;
+use App\Models\Diagnosis_list;
 use Illuminate\Http\Request;
 
 class Prescribe_medicineController extends Controller
@@ -13,25 +14,20 @@ class Prescribe_medicineController extends Controller
     {
 
         $medicines=Medicine::select(['name','id'])->get();
-        return view('backend.layouts.prescribe_medicine.insert_prescribe_medicine', compact('medicines'));
+        $diagnoses=Diagnosis_list::select(['name','id'])->get();
+        return view('backend.layouts.prescribe_medicine.insert_prescribe_medicine', compact('medicines','diagnoses'));
 
     }
 public function createprescribe_medicine(Request $request)
 {
     
-    
-        $request->validate([
-            'medicine_id'=>'required',
-            'days'=>'required',
-            'dosages'=>'required'
-
-        ]);
 
     prescribe_medicine::create([
         'prescription_id'=> $request->input('p_id'),
         'medicine_id'=> $request->input('medicine_id'),
         'days'=>$request->input('days'),
-        'dosages'=>$request->input('dosages')
+        'dosages'=>$request->input('dosages'),
+        'diagnosis_id'=>$request->input('diagnosis_id')
         
     ]);
 
@@ -47,7 +43,8 @@ public function createprescribe_medicine(Request $request)
       $list=Prescribe_medicine::all();
             // table relation
       $medicines=Medicine::with('medicinerelation');
-      return view('backend.layouts.prescribe_medicine.Prescribe_medicine_list',compact('list','medicines'));
+      $diagnoses=Diagnosis_list::with('diagnosisrelation');
+      return view('backend.layouts.prescribe_medicine.Prescribe_medicine_list',compact('list','diagnoses','medicines'));
   
     }
 }

@@ -32,6 +32,8 @@
 
     <!-- Main CSS-->
     <link href="{{asset('/backend/css/theme.css')}}" rel="stylesheet" media="all">
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet" />
+
 
 </head>
 
@@ -81,11 +83,20 @@
     <script src="{{asset('/backend/vendor/circle-progress/circle-progress.min.js')}}"></script>
     <script src="{{asset('/backend/vendor/perfect-scrollbar/perfect-scrollbar.js')}}"></script>
     <script src="{{asset('/backend/vendor/chartjs/Chart.bundle.min.js')}}"></script>
-    <script src="{{asset('/backend/vendor/select2/select2.min.js')}}">
+
+
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
     </script>
 
     <!-- Main JS-->
     <script src="{{asset('/backend/js/main.js')}}"></script>
+
+    <script>
+        $(document).ready(function() {
+        
+            $('.js-example-basic-multiple').select2();
+        });
+    </script>
 
 </body>
 

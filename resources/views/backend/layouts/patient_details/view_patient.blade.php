@@ -14,6 +14,9 @@
             <label for="">Patient Gender:</label>{{$patients->gender}}
             </p>
             <p>
+            <label for="">Patient Email:</label>{{$patients->email}}
+            </p>
+            <p>
             <label for="">Patient Age:</label>{{$patients->age}}
             </p>
 

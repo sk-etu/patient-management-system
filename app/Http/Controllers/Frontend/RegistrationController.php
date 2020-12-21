@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
 use App\Models\Patient;
+use App\User;
 use Illuminate\Http\Request;
 
 class RegistrationController extends Controller
@@ -23,20 +24,24 @@ class RegistrationController extends Controller
             'age'=>'required',
             'phone'=>'required',
             'address'=>'required',
+            'email'=>'required',
             'password'=>'required'
 
         ]);
     
-
-    Patient::create([
-        'name'=> $request->input('name'),
-        'gender'=>$request->input('gender'),
-        'age'=>$request->input('age'),
-        'phone'=>$request->input('phone'),
-        'address'=>$request->input('address'),
-        'password'=>$request->input('password')
-        
-    ]);
+        $user = User::create([
+            'name'=>$request->input('name'),
+            'email'=>$request->input('email'),
+            'password'=>bcrypt($request->input('password'))
+        ]);
+    
+        Patient::create([
+            'user_id'=>$user->id,
+            'gender'=>$request->input('gender'),
+            'age'=>$request->input('age'),
+            'phone'=>$request->input('phone'),
+            'address'=>$request->input('address'),
+        ]);
 
     return redirect()->back()->with('message','Registration create successfully.');
 

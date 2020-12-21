@@ -12,7 +12,8 @@
                                             <th>ID</th>
                                             <th>Medicine Name</th>
                                             <th>Days</th>
-                                            <th>Dosages</th>    
+                                            <th>Dosages</th> 
+                                            <th>Diagnosis Name</th>   
                                             <th>Action</th>                                        
                                             </tr>
                                         </thead>
@@ -23,6 +24,7 @@
                                             <td>{{$data->medicinerelation->name}}</td>
                                             <td>{{$data->days}}</td>
                                             <td>{{$data->dosages}}</td>  
+                                            <td>{{$data->diagnosisrelation->name}}</td>
                                             <td>
         
                                                 <a href="" class="btn btn-sm btn-info">Delete</a>

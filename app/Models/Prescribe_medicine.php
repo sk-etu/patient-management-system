@@ -15,5 +15,11 @@ class Prescribe_medicine extends Model
        return $this->belongsTo(Medicine::class,'medicine_id','id');
     }
 
+       //
+   public function diagnosisrelation()
+   {
+      return $this->belongsTo(Diagnosis_list::class,'diagnosis_id','id');
+   }
+
 
 }

@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use App\User;
 
 class Prescription extends Model
 {
@@ -10,10 +11,14 @@ class Prescription extends Model
    protected $guarded=[]; 
 
 
+
+
+
    //
-   public function diagnosisrelation()
+
+   public function userrelation()
    {
-      return $this->belongsTo(Diagnosis_list::class,'diagnosis_id','id');
+      return $this->belongsTo(User::class,'user_id','id');
    }
 
 
