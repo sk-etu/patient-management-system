@@ -35,18 +35,20 @@
                <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav navbar-right">
                          <li><a href="{{route('home')}}" class="smoothScroll">Home</a></li>
-                         <li><a href="{{route('about')}}" class="smoothScroll">About Us</a></li>
+                       
                          <li><a href="{{route('notification.view')}}" class="smoothScroll">Notification</a></li>
+                        
                          @guest
                        
                          <li><a href="{{route('frontend.login')}}" class="smoothScroll">Login</a></li>
                          
                          @endguest
                          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-                              Make A appointment
+                              Booking An Appointment
                          </button>  
                          
                          @auth
+                         <li><a href="{{route('profile')}}" class="smoothScroll">Profile</a></li>
             <!-- Button trigger modal -->   
                          <a href="{{route('frontend.logout')}}" type="button" class="btn btn-primary">
                               Logout

@@ -51,7 +51,9 @@ class RegistrationController extends Controller
     public function list()
     {
 
-        $list=Patient::all();
+        $list=Patient::with('user')->get();
+        
+        
         return view('backend.layouts.patient_details.patient_list', compact('list'));
     }
 
@@ -63,7 +65,9 @@ class RegistrationController extends Controller
      {
          $patients->delete();
          $message="Patient deleted Successfully";
-     }else{
+     }
+     else
+     {
          $message="No data found.";
      }
       return redirect()->back()->with('message',$message);

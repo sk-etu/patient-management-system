@@ -19,7 +19,7 @@
                                         @foreach($list as $data)
                                         <tr>
                                             <th scope="row">{{$data->id}}</th>
-                                            <td>{{$data->name}}</td>
+                                            <td>{{$data->user->name}}</td>
                                             <td>
                                                 <a href="{{route('patient.edit',$data->id)}}" class="btn btn-sm btn-info">Edit</a>
                                                 <a href="{{route('patient.delete',$data->id)}}" class="btn btn-sm btn-info">Delete</a>

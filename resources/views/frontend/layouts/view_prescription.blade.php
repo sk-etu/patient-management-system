@@ -1,5 +1,4 @@
-@extends('backend.master')
-@section('main')
+
 <!doctype html>
 <html lang="en">
 
@@ -59,7 +58,7 @@
 
 
         <div class="row">
-            <div class="col-md-3 offset-md-1">Name: {{$prescription->patientrelation->user->name}}</div>
+            <div class="col-md-3 offset-md-1">Name: {{$prescription->userrelation->name}}</div>
             <div class="col-md-3 ">Age: {{$prescription->patientrelation->age}}</div>
             <div class="col-md-3">Date: {{$prescription->date}}</div>
             <div class="col-md-3 offset-md-1">Gender: {{$prescription->patientrelation->gender}}</div>
@@ -139,7 +138,7 @@
 </body>
 
 </html>
-@stop
+
 
 
 

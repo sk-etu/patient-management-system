@@ -75,15 +75,12 @@
                     @csrf
 
                     <div class="wow fadeInUp">
-                                   <div class="col-md-6 col-sm-12">
-                                        <label for="id">Patient ID</label>
-                                        <input type="number" class="form-control" id="id" name="id" placeholder="id">
-                                   </div>
+                                
 
-                                   <div class="col-md-6 col-sm-12">
+                                   <!-- <div class="col-md-6 col-sm-12">
                                         <label for="name">Patient Name</label>
                                         <input type="text" class="form-control" id="name" name="name" placeholder="Full Name">
-                                   </div>
+                                   </div> -->
 
                                    <div class="col-md-6 col-sm-12">
                                         <label for="date">Select Date</label>

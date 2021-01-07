@@ -14,7 +14,7 @@
                                             <th>Patient ID</th>
                                             <th>Patient Name</th>
                                             <th>Date</th>
-                                            <th>Emergency</th>
+                                          
                                             <th>Action</th>
 
                                             </tr>
@@ -26,11 +26,12 @@
                                             <td>{{$data->patient_id}}</td>
                                             <td>{{$data->patient_name}}</td>
                                             <td>{{$data->date}}</td>
-                                            <td>{{$data->emergency}}</td> 
+                                            
                                             <td>
-                                                <a href="" class="btn btn-sm btn-info">Edit</a>
-                                                <a href="" class="btn btn-sm btn-info">Delete</a>
-                                                <a href="" class="btn btn-sm btn-info">View</a>
+                                               
+                                                <a href="{{route('appointment.delete',$data->id)}}" class="btn btn-sm btn-info">Delete</a>
+                                                <a href="{{route('appointment.view',$data->id)}}" class="btn btn-sm btn-info">View</a>
+                                                <a href="{{route('insert.prescription',$data->patient_id)}}" class="btn btn-sm btn-info">Prescription</a>
                                             </td>                                       
                                         </tr>
                                         @endforeach

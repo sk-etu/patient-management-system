@@ -16,9 +16,9 @@ class CreatePrescribeMedicinesTable extends Migration
         Schema::create('prescribe_medicines', function (Blueprint $table) {
             $table->id();
             $table->foreignId('prescription_id');
-            $table->foreignId('medicine_id',255)->nullable();
-            $table->foreignId('diagnosis_id',255)->nullable();
-            $table->string('days',5)->nullable();
+            $table->foreignId('medicine_id')->nullable();
+            $table->foreignId('diagnosis_id')->nullable();
+            $table->string('days')->nullable();
             $table->string('dosages')->nullable();
             $table->timestamps();
         });

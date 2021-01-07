@@ -12,24 +12,18 @@
 
                                 <div class="account-wrap">
                                     <div class="account-item clearfix js-item-menu">
-                                        <div class="image">
-                                            <img src="{{asset('backend/images/etu.jpg')}}" alt="Sadia Afrin" />
-                                        </div>
+                                        
                                         <div class="content">
-                                            <a class="js-acc-btn" href="#">Sadia Afrin </a>
+                                            <a class="js-acc-btn" href="#">{{auth()->user()->name}} </a>
                                         </div>
                                         <div class="account-dropdown js-dropdown">
                                             <div class="info clearfix">
-                                                <div class="image">
-                                                    <a href="#">
-                                                        <img src="{{asset('backend/images/etu.jpg')}}" alt="Sadia Afrin" />
-                                                    </a>
-                                                </div>
+                                                
                                                 <div class="content">
                                                     <h5 class="name">
-                                                        <a href="#">Sadia Afrin</a>
+                                                        <a href="#">{{auth()->user()->name}}</a>
                                                     </h5>
-                                                    <span class="email">sadiaafrinetu753@gmail.com</span>
+                                                    <span class="email">{{auth()->user()->email}}</span>
                                                 </div>
                                             </div>
                                             <div class="account-dropdown__body">

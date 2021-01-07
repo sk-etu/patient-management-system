@@ -23,7 +23,7 @@
                                         @foreach($list as $key=>$data)
                                             <tr>
                                                 <td>{{$key+1}}</td>
-                                                <td>{{$data->user_id}}</td>                                               
+                                                <td>{{$data->patient_id}}</td>                                               
                                                 <td>
                                                 <a href="{{route('prescription.edit',$data->id)}}" class="btn btn-sm btn-info">Edit</a>
                                                 <a href="{{route('prescription.delete',$data->id)}}" class="btn btn-sm btn-info">Delete</a>

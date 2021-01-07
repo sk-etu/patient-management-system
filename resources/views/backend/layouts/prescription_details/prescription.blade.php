@@ -22,23 +22,7 @@
                 <form action="{{route('prescription.store')}}" method="post">
                 @csrf
 
-                <div class="form-group">
-                        <label for="patient_id">Select patient ID</label>
-                        <select class="form-control" name="patient_id" id="patient_id">
-                            @foreach($patients as $patient)
-                            <option value="{{$patient->id}}">{{$patient->id}}</option>
-                            @endforeach
-                        </select>
-                  </div>
-                
-                  <div class="form-group">
-                        <label for="user_id">Select patient</label>
-                        <select class="form-control" name="user_id" id="user_id">
-                            @foreach($users as $user)
-                            <option value="{{$user->id}}">{{$user->name}}</option>
-                            @endforeach
-                        </select>
-                  </div>
+                  <input type="hidden" name="patient_id" value="{{$id}}" class="form-control">
                   <div class="form-group">
                       <label for="date">Select Date</label>
                       <input type="date" name="date" value="" class="form-control">
@@ -51,10 +35,20 @@
                     <label for="bp">Blood Pressure</label>
                     <input  name="bp"  placeholder="Enter patient bp" type="text" class="form-control" id="bp" aria-describedby="emailHelp">
                     </div>
+                    <div class="form -group">
+                        <label for="pulse">Pulse </label>
+                        <input  name="pulse"  placeholder="Enter patient pulse" type="number" class="form-control" id="pulse">
+            
+                    </div>
 
                     <div class="form -group">
                         <label for="chief_complaint">Chief Complaint </label>
-                        <textarea name="chief_complaint" class="form-control" id="chief_complaint"></textarea>
+                        <textarea name="chief_complaint" placeholder="Enter chief complaint" class="form-control" id="chief_complaint"></textarea>
+            
+                    </div>
+                    <div class="form -group">
+                        <label for="history">History </label>
+                        <textarea name="history" placeholder="Enter patient history" class="form-control" id="history"></textarea>
             
                     </div>
                       

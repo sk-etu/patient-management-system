@@ -29,7 +29,7 @@
 
                   <div class="form-group">
                     <label for="days">Days</label>
-                    <input  name="days"  placeholder="Enter days" type="number" class="form-control" id="days" aria-describedby="emailHelp">
+                    <input  name="days"  placeholder="Enter days" type="text" class="form-control" id="days" aria-describedby="emailHelp">
                   
                   </div>
                   <div class="form-group">

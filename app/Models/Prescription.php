@@ -15,11 +15,7 @@ class Prescription extends Model
 
 
    //
-
-   public function userrelation()
-   {
-      return $this->belongsTo(User::class,'user_id','id');
-   }
+ 
 
 
    //

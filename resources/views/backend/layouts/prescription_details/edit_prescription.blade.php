@@ -24,21 +24,26 @@
                 @csrf
 
                 
-                  <div class="form-group">
+                  <!-- <div class="form-group">
                     <label for="patient_id">ID</label>
                     <input value="{{$prescription->patient_id}}" name="patient_id"  placeholder="Enter patient id" type="number" class="form-control" id="patient_id" aria-describedby="emailHelp">
-                   </div>
+                   </div> -->
                   <div class="form-group">
                       <label for="date">Select Date</label>
                       <input value="{{$prescription->date}}" type="date" name="date" value="" class="form-control">
                   </div>
                   <div class="form-group">
                     <label for="weight">Weight</label>
-                    <input value="{{$prescription->weight}}" name="weight"  placeholder="Enter patient weight" type="number" class="form-control" id="weight" aria-describedby="emailHelp">
+                    <input value="{{$prescription->weight}}" name="weight" type="number" class="form-control" id="weight" aria-describedby="emailHelp">
                     </div>
                   <div class="form-group">
                     <label for="bp">Blood Pressure</label>
-                    <input value="{{$prescription->bp}}" name="bp"  placeholder="Enter patient bp" type="text" class="form-control" id="bp" aria-describedby="emailHelp">
+                    <input value="{{$prescription->bp}}" name="bp"   type="text" class="form-control" id="bp" aria-describedby="emailHelp">
+                    </div>
+
+                    <div class="form-group">
+                    <label for="pulse">Pulse</label>
+                    <input value="{{$prescription->pulse}}" name="pulse"   type="number" class="form-control" id="pulse">
                     </div>
 
 
@@ -53,14 +58,19 @@
                     
 
                     <div class="form -group">
-                        <label for="chief_complaint">Additional Instructions</label>
-                        <textarea name="chief_complaint" class="form-control" id="chief_complaint">{{$prescription->chief_complaint}}</textarea>
+                        <label for="chief_complaint">Chief Complaint </label>
+                        <textarea name="chief_complaint"  class="form-control" id="chief_complaint">{{$prescription->chief_complaint}}</textarea>
+            
+                    </div>
+                    <div class="form -group">
+                        <label for="history">History </label>
+                        <textarea name="history" class="form-control" id="history">{{$prescription->history}}</textarea>
             
                     </div>
 
                     <div class="form -group">
                         <label for="additional_instructions">Additional Instructions</label>
-                        <textarea name="additional_instructions" placeholder="Enter additional instructions" class="form-control" id="additional_instructions">{{$prescription->additional_instructions}}</textarea>
+                        <textarea name="additional_instructions" class="form-control" id="additional_instructions">{{$prescription->additional_instructions}}</textarea>
             
                     </div>
 

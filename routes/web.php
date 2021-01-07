@@ -20,6 +20,7 @@ Route::post('/login','Backend\UserController@loginProcess')->name('login.do');
 
 //group
 Route::group(['middleware'=>'auth'],function(){
+    Route::group(['middleware'=>['auth','checkadmin']],function (){
 
 //dashboard
 Route::get('/admin','Backend\HomeController@index')->name('dashboard');
@@ -41,7 +42,16 @@ Route::get('/prescribe_medicine','Backend\Prescribe_medicineController@prescribe
 Route::post('/prescribe_medicine','Backend\Prescribe_medicineController@createprescribe_medicine')->name('prescribe_medicine.store');
 Route::get('/prescribe_medicine/list','Backend\Prescribe_medicineController@list')->name('prescribe_medicine.list');
 
+//appointment
+// Backend
+Route::get('/appointment/list','Frontend\AppointmentController@list')->name('appointment.list');
+Route::get('/appointment/view/{id}','Frontend\AppointmentController@view')->name('appointment.view');
+Route::get('/appointment/delete/{id}','Frontend\AppointmentController@delete')->name('appointment.delete');
+Route::get('/appointment/prescription/view/{id}','Frontend\AppointmentController@prescriptionview')->name('insert.prescription');
 
+
+
+Route::group(['middleware'=>'isadmin'],function (){
 
 //diagnosis
 Route::get('/diagnosis','Backend\DiagnosisController@diagnosis')->name('diagnosis');
@@ -72,11 +82,6 @@ Route::get('/notification/edit/{id}','Backend\NotificationController@edit')->nam
 Route::put('/notification/update/{id}','Backend\NotificationController@update')->name('notification.update');
 
 
-//appointment
-// Backend
-Route::get('/appointment/list','Frontend\AppointmentController@list')->name('appointment.list');
-
-
 
 //Registration+Patient
 // Backend
@@ -87,9 +92,9 @@ Route::get('/patient/delete/{id}','Frontend\RegistrationController@delete')->nam
 Route::get('/patient/edit/{id}','Frontend\RegistrationController@edit')->name('patient.edit');
 Route::put('/patient/update/{id}','Frontend\RegistrationController@update')->name('patient.update');
 
-
 });
-
+});
+});
 
 
 
@@ -106,9 +111,16 @@ Route::get('/customer/logout','Frontend\UserController@logout')->name('frontend.
 // Frontend
 Route::get('/appointment','Frontend\AppointmentController@appointment')->name('appointment');
 Route::post('/appointment','Frontend\AppointmentController@createappointment')->name('appointment.store');
+Route::get('/appointment/cancle/{id}','Frontend\PatientProfileController@cancle')->name('appointment.cancle');
 
     
 Route::get('/notification/view','Backend\NotificationController@view')->name('notification.view');
+
+
+//patient-profile
+Route::get('/profile','Frontend\PatientProfileController@profile')->name('profile');
+Route::get('/profile/prescription/view/{id}','Frontend\PatientProfileController@view')->name('profile.view');
+
 });
 
 
@@ -122,7 +134,7 @@ Route::post('/customer/login','Frontend\UserController@loginProcess')->name('fro
   
 // Home-About
 Route::get('/home','Frontend\HomeController@index')->name('home');
-Route::get('/about','Frontend\HomeController@about')->name('about');
+
 
 
 

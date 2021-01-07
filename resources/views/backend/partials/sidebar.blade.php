@@ -7,6 +7,8 @@
             <div class="menu-sidebar__content js-scrollbar1">
                 <nav class="navbar-sidebar">
                     <ul class="list-unstyled navbar__list">
+
+                    @if(auth()->user()->role=='doctor')
                         <li class="active has-sub">
                             <a class="js-arrow" href="{{route('dashboard')}}">
                                 <i class="fas fa-tachometer-alt"></i>Dashboard</a>                      
@@ -21,10 +23,51 @@
                              <i class="fa fa-caret-down"></i>
                         </div>                        
                     <ul id="prescription" class="collapse">
+                        
+                        
                         <li>
-                            <a href="{{route('prescription')}}">
-                                <i></i>Insert Prescription</a>
+                            <a href="{{route('prescription.list')}}">
+                                <i></i>Prescription list</a>
                         </li>
+                    </ul>
+                    </li>
+
+ <!-- Appointment -->
+                    <li>
+                        <div href="#" style="margin-top: 15px;" data-toggle="collapse" data-target="#appointment" aria-expanded="true">
+                             <i class="fa fa-tags"></i>
+                             Appointment
+                             <i class="fa fa-caret-down"></i>
+                        </div>                        
+                    <ul id="appointment" class="collapse">
+                       
+                        
+                        <li>
+                            <a href="{{route('appointment.list')}}">
+                                <i></i>Appointment list</a>
+                        </li>
+                    </ul>
+                    </li>
+                    @endif
+
+
+                    @if(auth()->user()->role=='admin')
+
+                    <li class="active has-sub">
+                            <a class="js-arrow" href="{{route('dashboard')}}">
+                                <i class="fas fa-tachometer-alt"></i>Dashboard</a>                      
+                        </li>  
+
+    <!-- Prescription -->
+
+                    <li>
+                        <div href="#" data-toggle="collapse" data-target="#prescription" aria-expanded="true">
+                             <i class="fa fa-tags"></i>
+                             prescription
+                             <i class="fa fa-caret-down"></i>
+                        </div>                        
+                    <ul id="prescription" class="collapse">
+                       
                         
                         <li>
                             <a href="{{route('prescription.list')}}">
@@ -135,7 +178,7 @@
                         </li>
                     </ul>
                 </li>
-
+                @endif
                     </ul>
                 </nav>
             </div>

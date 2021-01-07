@@ -8,13 +8,13 @@
             <label for="">Patient ID:</label>{{$patients->id}}
             </p>
             <p>
-            <label for="">Patient Name:</label>{{$patients->name}}
+            <label for="">Patient Name:</label>{{$patients->user->name}}
             </p>
             <p>
             <label for="">Patient Gender:</label>{{$patients->gender}}
             </p>
             <p>
-            <label for="">Patient Email:</label>{{$patients->email}}
+            <label for="">Patient Email:</label>{{$patients->user->email}}
             </p>
             <p>
             <label for="">Patient Age:</label>{{$patients->age}}
@@ -26,9 +26,7 @@
             <p>
             <label for="">Address:</label>{{$patients->address}}
             </p>
-            <p>
-            <label for="">Password:</label>{{$patients->password}}
-            </p>
+           
 
 </main>
 @stop
