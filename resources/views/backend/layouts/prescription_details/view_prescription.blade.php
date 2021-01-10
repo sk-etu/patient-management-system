@@ -1,5 +1,4 @@
-@extends('backend.master')
-@section('main')
+
 <!doctype html>
 <html lang="en">
 
@@ -52,7 +51,7 @@
                     <h3>Dr. Fatema Tuz Johra Eva</h3>
                     <p>MBBS(Dhaka), D.D.V(Vienna) <br /> Skin, V.D Allergy <br /> Leprosy Specialist </p>
                     <h5>Consultant: Dept. of Skin, VD & Allergy</h5>
-                    <p>Islami Bank Hospital Mirpu Dhaka <br /> BMDC Reg: NO.: A-27847 <br /> Call: 01711113107</p>
+                    <p>Islami Bank Hospital Mirpur Dhaka <br /> BMDC Reg: NO.: A-27847 <br /> Call: 01711113107</p>
                 </div>
             </div>
         </div>
@@ -139,7 +138,7 @@
 </body>
 
 </html>
-@stop
+                                               
 
 
 

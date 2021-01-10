@@ -47,6 +47,19 @@ class RegistrationController extends Controller
 
 }
 
+
+public function search(Request $request)
+{
+
+  $search_text = $request->input('query');
+
+  $list=Patient::whereHas('user',function($query) use($search_text){
+       $query->where('name','LIKE','%'. $search_text.'%');
+  })->get();
+
+  return view('backend.layouts.patient_details.patient_list',compact('list'));
+}
+
 //for view data table
     public function list()
     {

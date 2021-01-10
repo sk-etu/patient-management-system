@@ -37,6 +37,9 @@ Route::get('/prescription/view/{id}','Backend\PrescriptionController@view')->nam
 //edit
 Route::get('/prescription/edit/{id}','Backend\PrescriptionController@edit')->name('prescription.edit');
 Route::put('/prescription/update/{id}','Backend\PrescriptionController@update')->name('prescription.update');
+//search
+Route::get('/prescription/search','Backend\PrescriptionController@search')->name('search');
+
 // prescribe_medicine
 Route::get('/prescribe_medicine','Backend\Prescribe_medicineController@prescribe_medicine')->name('prescribe_medicine');
 Route::post('/prescribe_medicine','Backend\Prescribe_medicineController@createprescribe_medicine')->name('prescribe_medicine.store');
@@ -48,8 +51,6 @@ Route::get('/appointment/list','Frontend\AppointmentController@list')->name('app
 Route::get('/appointment/view/{id}','Frontend\AppointmentController@view')->name('appointment.view');
 Route::get('/appointment/delete/{id}','Frontend\AppointmentController@delete')->name('appointment.delete');
 Route::get('/appointment/prescription/view/{id}','Frontend\AppointmentController@prescriptionview')->name('insert.prescription');
-
-
 
 Route::group(['middleware'=>'isadmin'],function (){
 
@@ -91,6 +92,8 @@ Route::get('/patient/delete/{id}','Frontend\RegistrationController@delete')->nam
 //edit
 Route::get('/patient/edit/{id}','Frontend\RegistrationController@edit')->name('patient.edit');
 Route::put('/patient/update/{id}','Frontend\RegistrationController@update')->name('patient.update');
+//search
+Route::get('/patient/search','Frontend\RegistrationController@search')->name('patient.search');
 
 });
 });
@@ -112,7 +115,6 @@ Route::get('/customer/logout','Frontend\UserController@logout')->name('frontend.
 Route::get('/appointment','Frontend\AppointmentController@appointment')->name('appointment');
 Route::post('/appointment','Frontend\AppointmentController@createappointment')->name('appointment.store');
 Route::get('/appointment/cancle/{id}','Frontend\PatientProfileController@cancle')->name('appointment.cancle');
-
     
 Route::get('/notification/view','Backend\NotificationController@view')->name('notification.view');
 
@@ -120,6 +122,7 @@ Route::get('/notification/view','Backend\NotificationController@view')->name('no
 //patient-profile
 Route::get('/profile','Frontend\PatientProfileController@profile')->name('profile');
 Route::get('/profile/prescription/view/{id}','Frontend\PatientProfileController@view')->name('profile.view');
+
 
 });
 

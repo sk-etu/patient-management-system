@@ -6,35 +6,44 @@
    <link rel="stylesheet" href="{{asset('frontend/css/style/style.css')}}">
   </head>
   <body>
+    <style>
+      body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    background-image: url("http://localhost/pms/public /frontend/images/slider1.jpg");
+    background-size: cover;
+}
+    </style>
         <div class="login-box">
         @if(session()->has('message'))
-                  <p class="alert alert-success">{{session()->get('message')}}</p>
+                  <p style="color:black;" class="alert alert-success">{{session()->get('message')}}</p>
               @endif
 
               @if($errors->any())
                   @foreach($errors->all() as $er)
-                      <p class="alert alert-danger">{{$er}}</p>
+                      <p style="color:black;" class="alert alert-danger">{{$er}}</p>
               @endforeach
               @endif
 
-            <h1>Log In</h1>
+            <h1 style="color:black;">Log In</h1>
 
           <form action="{{route('frontend.login.do')}}" method="POST" role="form">
                   @csrf
           <div class="textbox">
-            <i class="fas fa-user"></i>
+            <i style="color:black;" class="fas fa-user"></i>
             <input name="email" type="email" placeholder="enter email"  class="form-control" id="email">
           </div>
 
           <div class="textbox">
-            <i class="fas fa-lock"></i>
+            <i style="color:black;" class="fas fa-lock"></i>
             <input name="password" type="password" placeholder="Password" class="form-control" id="password">
           </div>
 
-          <input type="submit" class="btn" value="Sign in">
+          <input style="color:black;" type="submit" class="btn" value="Sign in">
           
         <div class="container signin">
-          <p >Create an account? <a href="{{route('registration')}}"style="color:#4caf50">Sign Up</a>.</p>
+          <p style="color:black;" >Create an account? <a href="{{route('registration')}}"style="color:#4caf50">Sign Up</a>.</p>
         </div>
         </div>
 

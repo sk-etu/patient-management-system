@@ -10,14 +10,6 @@ class Prescription extends Model
     
    protected $guarded=[]; 
 
-
-
-
-
-   //
- 
-
-
    //
    public function patientrelation()
    {

@@ -6,6 +6,28 @@
                             <div class="col-lg-12">
                                 <div class="table-responsive table--no-card m-b-30">
                                    
+                                
+                                <!-- search -->
+
+                            <div class="col-md-12">
+                                <form action="{{route('patient.search')}}" style="/* float:right */">
+                                    <div style="
+                                        float: right;
+                                        padding: 10px 10px;
+                                    ">
+                                    <div>
+                                        <div class="input-group mb-3">
+                                            <input type="text"  name="query" class="form-control" aria-label="seaching anything..." aria-describedby="basic-addon2">
+                                            <div class="input-group-append">
+                                                <span class="input-group-text text-capitalize" id="basic-addon2">search</span>
+                                            </div>
+                                            
+                                        </div>
+                                    </div>
+                                        
+                                </form>
+                            </div>
+                                   
                                 <table class="table table-borderless table-striped table-earning">
                                         
                                         <thead>
@@ -18,7 +40,7 @@
                                         <tbody>
                                         @foreach($list as $data)
                                         <tr>
-                                            <th scope="row">{{$data->id}}</th>
+                                            <td>{{$data->id}}</td>
                                             <td>{{$data->user->name}}</td>
                                             <td>
                                                 <a href="{{route('patient.edit',$data->id)}}" class="btn btn-sm btn-info">Edit</a>

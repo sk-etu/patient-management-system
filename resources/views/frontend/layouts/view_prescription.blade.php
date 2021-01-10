@@ -3,6 +3,7 @@
 <html lang="en">
 
 <head>
+                                               
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -51,14 +52,14 @@
                     <h3>Dr. Fatema Tuz Johra Eva</h3>
                     <p>MBBS(Dhaka), D.D.V(Vienna) <br /> Skin, V.D Allergy <br /> Leprosy Specialist </p>
                     <h5>Consultant: Dept. of Skin, VD & Allergy</h5>
-                    <p>Islami Bank Hospital Mirpu Dhaka <br /> BMDC Reg: NO.: A-27847 <br /> Call: 01711113107</p>
+                    <p>Islami Bank Hospital Mirpur Dhaka <br /> BMDC Reg: NO.: A-27847 <br /> Call: 01711113107</p>
                 </div>
             </div>
         </div>
 
 
         <div class="row">
-            <div class="col-md-3 offset-md-1">Name: {{$prescription->userrelation->name}}</div>
+            <div class="col-md-3 offset-md-1">Name: {{$prescription->patientrelation->user->name}}</div>
             <div class="col-md-3 ">Age: {{$prescription->patientrelation->age}}</div>
             <div class="col-md-3">Date: {{$prescription->date}}</div>
             <div class="col-md-3 offset-md-1">Gender: {{$prescription->patientrelation->gender}}</div>

@@ -19,13 +19,21 @@ class AppointmentController extends Controller
         return view('frontend.master',compact('appointment'));
 
     }
+
+
+
 public function createappointment(Request $request)
 {
 
-        $request->validate([
-            'date'=>'required'
-        ]);
+    //already created
+    $allreadyCreated = appointment::where('patient_id','=',auth()->user()->patient->id)->whereDate('date', '=',$request->input('date'))->count();
 
+        if($allreadyCreated !== 0){
+           return redirect()->back()->with('message','In same date you already have appointment.');
+        }
+
+
+        
         Appointment::create([
         'patient_id'=> auth()->user()->patient->id,
         'patient_name'=> auth()->user()->name,
@@ -38,16 +46,16 @@ public function createappointment(Request $request)
 
 }
 
+
     public function list()
 
     {
-                 //carbon 
-  
-          $list = appointment::whereDate('date', Carbon::today())->get();
+         
+        
+        $list = appointment::whereDate('date', Carbon::today())->get();
     
         return view('backend.layouts.appointment_details.appointment_list',compact('list'));
     }
-
     //view data
     public function view($id)
     {
@@ -70,7 +78,7 @@ public function createappointment(Request $request)
          return redirect()->back()->with('message',$message);
      }
 
-         //view prescription
+         // prescription
     public function prescriptionview($id)
     {
        

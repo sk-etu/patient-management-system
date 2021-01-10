@@ -22,22 +22,22 @@
                 <form action="{{route('prescription.store')}}" method="post">
                 @csrf
 
-                  <input type="hidden" name="patient_id" value="{{$id}}" class="form-control">
+                  <input type="hidden" name="id" value="{{$id}}" class="form-control">
                   <div class="form-group">
                       <label for="date">Select Date</label>
-                      <input type="date" name="date" value="" class="form-control">
+                      <input type="date" name="date" value="{{date('Y-m-d')}}" max="{{date('Y-m-d')}}" min="{{date('Y-m-d')}}" class="form-control">
                   </div>
                   <div class="form-group">
                     <label for="weight">Weight</label>
-                    <input  name="weight"  placeholder="Enter patient weight" type="number" class="form-control" id="weight" aria-describedby="emailHelp">
+                    <input  name="weight" oninput="this.value=Math.abs(this.value)" min="1"  placeholder="Enter patient weight" type="number" class="form-control" id="weight" aria-describedby="emailHelp">
                     </div>
                   <div class="form-group">
                     <label for="bp">Blood Pressure</label>
-                    <input  name="bp"  placeholder="Enter patient bp" type="text" class="form-control" id="bp" aria-describedby="emailHelp">
+                    <input  name="bp" placeholder="Enter patient bp" type="text" class="form-control" id="bp" aria-describedby="emailHelp">
                     </div>
                     <div class="form -group">
                         <label for="pulse">Pulse </label>
-                        <input  name="pulse"  placeholder="Enter patient pulse" type="number" class="form-control" id="pulse">
+                        <input  name="pulse" oninput="this.value=Math.abs(this.value)" min="1"  placeholder="Enter patient pulse" type="number" class="form-control" id="pulse">
             
                     </div>
 

@@ -6,7 +6,7 @@
           <div class="col-lg-12">
             <div class="table-responsive table--no-card m-b-30">
 
-                <h1>New Notification</h1>
+                <h1>New Notice</h1>
 
                 @if(session()->has('message'))
                   <p class="alert alert-success">{{session()->get('message')}}</p>
@@ -28,7 +28,7 @@
                   </div>
                   <div class="form-group">
                       <label for="date">Select Date</label>
-                      <input type="date" name="date" value="" class="form-control">
+                      <input type="date" name="date" value="{{date('Y-m-d')}}" min="{{date('Y-m-d')}}" class="form-control">
                   </div>
 
                   <div class="form-group">

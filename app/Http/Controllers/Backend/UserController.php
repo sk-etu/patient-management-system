@@ -31,7 +31,8 @@ class UserController extends Controller
         if (Auth::attempt($login_info)) {
             $request->session()->regenerate();
             return redirect()->intended('admin');
-        }else
+        }
+        else
         {
             return redirect()->back()->withErrors('Invalid');
         }
@@ -42,7 +43,7 @@ class UserController extends Controller
     {
         
         Auth::logout();
-        return redirect()->route('login.do');
+        return redirect()->route('frontend.login.do');
 
 
     }

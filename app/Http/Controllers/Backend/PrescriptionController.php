@@ -5,24 +5,20 @@ namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\Controller;
 use App\Models\Prescription;
 use Illuminate\Support\Facades\Auth;
+use App\Models\Appointment;
 use App\Models\Diagnosis_list;
 use App\Models\Medicine;
 use App\Models\patient;
 use App\User;
 use App\Models\Prescribe_medicine;
 use Illuminate\Http\Request;
+use PDF;
 
 class PrescriptionController extends Controller
 {
   // view prescription
   public function prescription()
   {
-
-    // dd($diagnoses);
-    
-  
-    // $patients=Patient::select(['id'])->get();
-    // $users=User::select(['name','id'])->get();
     return view ('backend.layouts.prescription_details.prescription');
   } 
 
@@ -30,7 +26,7 @@ class PrescriptionController extends Controller
     // prescription form create
   public function createPrescription(Request $request)
   {
-   //dd($request->all());
+  //  dd($request->all());
 
     // validation
       $request->validate([
@@ -42,10 +38,12 @@ class PrescriptionController extends Controller
          
       ]);
 
+      $appointment=Appointment::find($request->id);
+
       // in form passing data
       $data = Prescription::create([
         'user_id'=> auth()->user()->id,
-        'patient_id'=>$request->input('patient_id'),
+        'patient_id'=>$appointment->patient_id,
         'weight'=>$request->input('weight'),
         'pulse'=>$request->input('pulse'),
         'bp'=>$request->input('bp'),
@@ -56,8 +54,22 @@ class PrescriptionController extends Controller
 
     ]);
 
+    $appointment->update(['status'=>false]);
+
     return redirect()->route('prescribe_medicine',['p_id'=>$data->id])->with('message','Prescription Created Successfully.');
 
+  }
+
+  public function search(Request $request)
+  {
+
+    $search_text = $request->input('query');
+  
+    $list=prescription::whereHas('patientrelation.user',function($query) use($search_text){
+         $query->where('name','LIKE','%'. $search_text.'%');
+    })->get();
+
+    return view('backend.layouts.prescription_details.prescription_list',compact('list'));
   }
 
 
@@ -67,14 +79,11 @@ class PrescriptionController extends Controller
     $list=prescription::with(['patientrelation','prescribe_medicinerelation'])->get();
 
   //dd($list);
-          // table relation
- 
     return view('backend.layouts.prescription_details.prescription_list',compact('list'));
 
   }
 
-
-      // delete data
+  // delete data
   public function delete($id)
   {
      $prescription=Prescription::find($id);
@@ -93,11 +102,14 @@ class PrescriptionController extends Controller
     public function view($id)
     {
       $prescription=prescription::with(['prescribe_medicinerelation.medicinerelation','patientrelation.user','prescribe_medicinerelation.diagnosisrelation'])->find($id);
+      return view('backend.layouts.prescription_details.view_prescription',compact('prescription'));
       
       //dd($prescription);
-      return view('backend.layouts.prescription_details.view_prescription',compact('prescription'));
-
-    } 
+      //pdf
+    //   $pdf =  PDF::loadview('backend.layouts.prescription_details.view_prescription',compact('prescription'));
+    //    return $pdf->stream('invoice.pdf');
+    //    return $pdf->download('invoice.pdf');
+     } 
 
 
     //Edit data

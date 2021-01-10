@@ -19,6 +19,7 @@ class CreateAppointmentsTable extends Migration
             $table->string('patient_name',255);
             $table->string('date');
             $table->text('emergency')->nullable();
+            $table->string('status')->default(true);
             $table->timestamps();
         });
     }

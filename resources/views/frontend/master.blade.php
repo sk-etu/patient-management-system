@@ -75,22 +75,16 @@
                     @csrf
 
                     <div class="wow fadeInUp">
-                                
-
-                                   <!-- <div class="col-md-6 col-sm-12">
-                                        <label for="name">Patient Name</label>
-                                        <input type="text" class="form-control" id="name" name="name" placeholder="Full Name">
-                                   </div> -->
 
                                    <div class="col-md-6 col-sm-12">
                                         <label for="date">Select Date</label>
-                                        <input type="date" name="date" value="" class="form-control">
+                                        <input type="date" name="date" value="{{date('Y-m-d')}}" min="{{date('Y-m-d')}}" class="form-control">
                                    </div>
                                       <br></br>
                                    <div class="col-md-12 col-sm-12">
                                         <label for="emergency">Emergency(if have)</label>
                                         <textarea class="form-control" id="emergency" name="emergency" placeholder="emergency"></textarea>
-                                        <button type="submit" class="btn btn-primary" id="cf-submit" name="submit">Submit</button>
+                                        <button type="submit" class="btn btn-primary" id="cf-submit" name="submit" onclick="validatedate(document.form1.text1)">Submit</button>
                                    </div>
                     </div>
       </div>    

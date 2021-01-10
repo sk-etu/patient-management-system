@@ -23,6 +23,7 @@ class PatientProfileController extends Controller
         return view('frontend.layouts.patient_profile',compact('patient','prescription','appointment'));
     }
 
+    
     public function view($id)
     {
 
