@@ -22,9 +22,9 @@ class RegistrationController extends Controller
             'name'=>'required',
             'gender'=>'required',
             'age'=>'required',
-            'phone'=>'required',
+            'phone'=>"required|regex:/^\+?(88)?0?1[3456789][0-9]{8}\b/",
             'address'=>'required',
-            'email'=>'required',
+            'email'=>'required|email|unique:users',
             'password'=>'required'
 
         ]);

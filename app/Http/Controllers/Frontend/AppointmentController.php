@@ -15,7 +15,6 @@ class AppointmentController extends Controller
     public function appointment()
     {
 
-      
         return view('frontend.master',compact('appointment'));
 
     }
@@ -42,7 +41,7 @@ public function createappointment(Request $request)
         
     ]);
 
-    return redirect()->back()->with('message','Appointment Created Successfully.');
+    return redirect()->route('profile')->with('message','Appointment Created Successfully.');
 
 }
 

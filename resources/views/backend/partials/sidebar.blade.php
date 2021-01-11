@@ -1,8 +1,8 @@
 <aside class="menu-sidebar d-none d-lg-block">
             <div class="logo">
-                <!-- <a href="#">
-                    <img src="{{asset('backend/images/icon/logo.png')}}" alt="Cool Admin" />
-                </a> -->
+                <a href="#">
+                    <img src="{{asset('backend/images/icon/health.PNG')}}" alt="health" />
+                </a>
             </div>
             <div class="menu-sidebar__content js-scrollbar1">
                 <nav class="navbar-sidebar">
@@ -53,7 +53,7 @@
                         <ul id="diagnosis" class="collapse">
                             <li class="{{request()->routeIs('diagnosis') ? 'active':''}}  ">
                                 <a href="{{route('diagnosis')}}">
-                                    <i></i>Inser Diagnosis</a>
+                                    <i></i>Add Diagnosis</a>
                             </li>
                             <li class="{{request()->routeIs('diagnosis.list') ? 'active':''}}  ">
                                 <a href="{{route('diagnosis.list')}}">
@@ -73,12 +73,12 @@
                     <ul id="medicine" class="collapse">
                         <li class="{{request()->routeIs('medicine') ? 'active':''}}  ">
                             <a href="{{route('medicine')}}">
-                                <i></i>Insert Medicine</a>
+                                <i></i>Add Medicine</a>
                         </li>
                         
                         <li class="{{request()->routeIs('medicine.list') ? 'active':''}}  ">
                             <a href="{{route('medicine.list')}}">
-                                <i></i>medicine list</a>
+                                <i></i>Medicine list</a>
                         </li>
                     </ul>
                     </li>                   
@@ -101,7 +101,7 @@
     <ul id="notification" class="collapse">
         <li class="{{request()->routeIs('notification') ? 'active':''}}  ">
             <a href="{{route('notification')}}">
-                <i></i>Insert Notice</a>
+                <i></i>Create Notice</a>
         </li>
         
         <li class="{{request()->routeIs('notification.list') ? 'active':''}}  ">
@@ -121,7 +121,7 @@
                     <ul id="Patient" class="collapse">
                         <li class="{{request()->routeIs('registration') ? 'active':''}}  ">
                             <a href="{{route('registration')}}">
-                                <i></i>Insert Patient</a>
+                                <i></i>Add Patient</a>
                         </li>
                         
                         <li class="{{request()->routeIs('patient.list') ? 'active':''}}  ">

@@ -1,3 +1,4 @@
+
 <footer data-stellar-background-ratio="5">
           <div class="container">
                <div class="row">
@@ -19,7 +20,7 @@
                               
                                    <div class="stories-info">
                                         <a href="#"><h5>Dr. Fatema chamber</h5></a>
-                                        <span> Plot #87, BNS Center (4th floor), Suite No. 507/A, Sector #07, Uttara Model Town, Dhaka 1230</span>
+                                        <span> Beside East West Medical College & Hospital, Uttara, Dhaka 1230</span>
                                    </div>
                               </div>
                          </div>
@@ -34,14 +35,14 @@
                               </div> 
 
                               <ul class="social-icon">
-                                   <li><a href="#" class="fa fa-facebook-square" attr="facebook icon"></a></li>
+                                   <li><a href="#" class="fab fa-facebook-square" attr="facebook icon"></a></li>
                                    <li><a href="#" class="fa fa-twitter"></a></li>
                                    <li><a href="#" class="fa fa-instagram"></a></li>
                               </ul>
                          </div>
                     </div>
 
-
+                    <!-- <i class="fab fa-facebook-square"></i> -->
                     
                </div>
           </div>

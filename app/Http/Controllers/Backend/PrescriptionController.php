@@ -60,6 +60,7 @@ class PrescriptionController extends Controller
 
   }
 
+  //searcch
   public function search(Request $request)
   {
 

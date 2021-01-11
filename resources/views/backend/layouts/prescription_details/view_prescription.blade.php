@@ -1,7 +1,18 @@
 
+
 <!doctype html>
 <html lang="en">
 
+
+<br><br>
+
+<style type="text/css">
+ @media print{
+            .button{
+                display: none !important;
+            }
+        }
+    </style>
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -12,6 +23,11 @@
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
     <title>Prescription</title>
+   
+</head>
+
+<body>
+    <div class="container" id="print" class="print">
     <style>
         .diagnosis {
             border-right: 1px solid rgba(0, 0, 0, .1);
@@ -38,10 +54,6 @@
             margin: 0;
         }
     </style>
-</head>
-
-<body>
-    <div class="container">
         <div class="header">
             <div class="row">
                 <div class="col-md-6">
@@ -123,7 +135,14 @@
                 </div>
             </div>
         </div>
+        <button style='float:right;' onClick="myFunction()" class="btnprn btn button">Print Preview</a>
     </div>
+
+    <script type="text/javascript">
+     function myFunction(){
+            window.print();
+        }
+    </script>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"

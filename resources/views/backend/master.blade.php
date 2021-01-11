@@ -39,9 +39,7 @@
 
 <body class="animsition">
     <div class="page-wrapper">
-        <!-- HEADER MOBILE-->
-        @include('backend.partials.navbar')
-        <!-- END HEADER MOBILE-->
+ 
 
         <!-- MENU SIDEBAR-->
         @include('backend.partials.sidebar')

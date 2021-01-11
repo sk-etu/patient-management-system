@@ -48,7 +48,7 @@
                      
                          <li><a href="{{route('profile')}}" class="smoothScroll">Profile</a></li>
                          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-                              Booking An Appointment
+                              Make An Appointment
                          </button>  
                          <a href="{{route('frontend.logout')}}" type="button" class="btn btn-primary">
                               Logout

@@ -9,7 +9,7 @@
                     <div class="col-md-12 col-sm-12">
                          <!-- SECTION TITLE -->
                          <div class="section-title wow fadeInUp" data-wow-delay="0.1s">
-                              <h2>Noticication</h2>
+                              <h2>Notification</h2>
                          </div>
                     </div>
 

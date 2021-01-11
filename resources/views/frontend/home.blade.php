@@ -73,6 +73,7 @@
 
 
    
+   <h3>Location</h3>
      <!-- GOOGLE MAP -->
      <section id="google-map">
      <!-- How to change your own map point
@@ -81,7 +82,7 @@
             3. Click "Share" and choose "Embed map" tab
             4. Copy only URL and paste it within the src="" field below
 	-->
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3647.3030413476204!2d100.5641230193719!3d13.757206847615207!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xf51ce6427b7918fc!2sG+Tower!5e0!3m2!1sen!2sth!4v1510722015945" width="100%" height="350" frameborder="0" style="border:0" allowfullscreen></iframe>
+     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3647.8678788873153!2d90.37426301429988!3d23.894303289182147!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c478256507f3%3A0x4ac08ff51984742c!2sEast%20West%20Medical%20College%20%26%20Hospital!5e0!3m2!1sen!2sbd!4v1610352549188!5m2!1sen!2sbd" width="1700" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
      </section>       
      
 @stop
