@@ -44,7 +44,9 @@
                          
                          @auth
                          @if(auth()->user()->role=='user')  
-                         <li><a href="{{route('notification.view')}}" class="smoothScroll">Notification</a></li>
+                         <li>
+                         <a href="{{route('notification.view')}}" class="smoothScroll">Notification</a>
+                         </li>
                      
                          <li><a href="{{route('profile')}}" class="smoothScroll">Profile</a></li>
                          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
@@ -55,7 +57,9 @@
                          </a>
                          @endif
                          @if(auth()->user()->role=='doctor')  
-                         <li><a href="{{route('notification.view')}}" class="smoothScroll">Notification</a></li>
+                         <li>
+                         <a href="{{route('notification.view')}}" class="smoothScroll">Notification</a>
+                         </li>
                     
                          <a href="{{route('frontend.logout')}}" type="button" class="btn btn-primary">
                               Logout

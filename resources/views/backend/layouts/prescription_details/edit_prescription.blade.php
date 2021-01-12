@@ -23,11 +23,7 @@
                 @method('put')
                 @csrf
 
-                
-                  <!-- <div class="form-group">
-                    <label for="patient_id">ID</label>
-                    <input value="{{$prescription->patient_id}}" name="patient_id"  placeholder="Enter patient id" type="number" class="form-control" id="patient_id" aria-describedby="emailHelp">
-                   </div> -->
+
                   <div class="form-group">
                       <label for="date">Select Date</label>
                       <input value="{{$prescription->date}}" type="date" name="date" value="" class="form-control">
@@ -47,7 +43,7 @@
                     </div>
 
 
-                    <div class="form-group">
+                    <!-- <div class="form-group">
                         <label for="diagnosis">Select Diagnosis Name</label>
                         <select class="form-control" name="diagnosis_id" id="diagnosis">
                             @foreach($diagnoses as $diagnosis)
@@ -55,7 +51,7 @@
                             @endforeach
                         </select>
                     </div>
-                    
+                     -->
 
                     <div class="form -group">
                         <label for="chief_complaint">Chief Complaint </label>

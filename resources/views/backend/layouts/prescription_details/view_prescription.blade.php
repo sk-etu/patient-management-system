@@ -35,17 +35,17 @@
 
         .header {
             padding: 20px;
-            background-color: skyblue;
+            background-color: #66b4dc;
             border-bottom: 1px solid rgba(0, 0, 0, .1);
             margin-bottom: 15px;
         }
 
         .header img {
-            max-height: 225px;
+            max-height: 240px;
         }
         .footer {
             padding: 20px;
-            background-color: skyblue;
+            background-color: #66b4dc;
             border-top: 1px solid rgba(0, 0, 0, .1);
             margin-top: 15px;
         }
@@ -57,7 +57,7 @@
         <div class="header">
             <div class="row">
                 <div class="col-md-6">
-                    <img src="{{asset('\backend\images\dr.eva.jpg')}}" alt="">
+                    <img src="{{asset('\backend\images\Capture.PNG')}}" alt="">
                 </div>
                 <div class="col-md-6 text-right">
                     <h3>Dr. Fatema Tuz Johra Eva</h3>

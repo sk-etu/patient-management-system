@@ -120,7 +120,7 @@ class PrescriptionController extends Controller
  
 
 
-      return view ('backend.layouts.prescription_details.edit_prescription',compact('prescription','diagnoses'));
+      return view ('backend.layouts.prescription_details.edit_prescription',compact('prescription'));
     }
 
     // insert update form

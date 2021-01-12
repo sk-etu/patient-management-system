@@ -30,22 +30,31 @@
 <!-- admin -->
                     @if(auth()->user()->role=='admin')
 
-                    <li class="{{request()->routeIs('dashboard') ? 'active':''}}  has-sub">
+                    <li  style="margin-top: 15px;" class="{{request()->routeIs('dashboard') ? 'active':''}}  has-sub">
                             <a class="js-arrow" href="{{route('dashboard')}}">
                                 <i class="fas fa-tachometer-alt"></i>Dashboard</a>                      
                         </li>  
 
     <!-- Prescription -->
 
-                        <li class="{{request()->routeIs('prescription.list') ? 'active':''}}  ">
+                        <li  style="margin-top: 15px;" class="{{request()->routeIs('prescription.list') ? 'active':''}}  ">
                             <a href="{{route('prescription.list')}}">
                             <i class="fas fa-list"></i>Prescription</a>
                         </li>
 
+
+    <!-- Appointment -->
+
+                        <li  style="margin-top: 15px;" class="{{request()->routeIs('appointment.list') ? 'active':''}}  ">
+                            <a href="{{route('appointment.list')}}">
+                            <i class="far fa-calendar-check"></i>Appointment</a>
+                        </li>
+
+
   <!-- Diagnosis -->
 
                     <li>
-                        <div href="#" data-toggle="collapse" data-target="#diagnosis" aria-expanded="true">
+                        <div href="#" style="margin-top: 15px;" data-toggle="collapse" data-target="#diagnosis" aria-expanded="true">
                         <i class="fas fa-stethoscope"></i>
                              Diagnosis
                              <i class="fa fa-caret-down"></i>
@@ -82,18 +91,12 @@
                         </li>
                     </ul>
                     </li>                   
- <!-- Appointment -->
-
-                    <li class="{{request()->routeIs('appointment.list') ? 'active':''}}  ">
-                            <a href="{{route('appointment.list')}}">
-                            <i class="far fa-calendar-check"></i>Appointment</a>
-                        </li>
 
 
 <!-- Notification -->
 
 <li>
-<div href="#" data-toggle="collapse" data-target="#notification" aria-expanded="true">
+<div   style="margin-top: 15px;" href="#" data-toggle="collapse" data-target="#notification" aria-expanded="true">
 <i class="far fa-bell"></i>
         Notice
         <i class="fa fa-caret-down"></i>
@@ -109,7 +112,8 @@
                 <i></i>Notice list</a>
         </li>
     </ul>
-    </li>        
+    </li>      
+ 
 
   <!-- patient -->
                 <li>
@@ -130,6 +134,15 @@
                         </li>
                     </ul>
                 </li>
+
+
+                   <!-- Feedback   -->
+
+                        <li  style="margin-top: 15px;" class="{{request()->routeIs('feedback') ? 'active':''}}  ">
+                            <a href="{{route('feedback.list')}}">
+                            <i class="far fa-comment"></i>Feedback</a>
+                        </li>
+
                 @endif
                     </ul>
                 </nav>

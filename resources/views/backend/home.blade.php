@@ -42,10 +42,10 @@
                                     <div class="overview__inner">
                                         <div class="overview-box clearfix">
                                             <div class="icon">
-                                                <i class="zmdi zmdi-shopping-cart"></i>
+                                                <i class="fa fa-list"></i>
                                             </div>
                                             <div class="text">
-                                                <h2>388,688</h2>
+                                                <h2>{{$appointment}}</h2>
                                                 <span>left appointment</span>
                                             </div>
                                         </div>

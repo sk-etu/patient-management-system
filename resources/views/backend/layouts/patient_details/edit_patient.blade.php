@@ -34,10 +34,7 @@
         <option value="female" {{$patients->gender == 'female' ? 'selected' : ''}} >Female</option>
       </select>
   </div>
-  <div class="col-md-12 col-sm-12">
-        <label for="email">Email</label>
-        <input value="{{$patients->email}}" name="email" placeholder="Enter email" type="email" class="form-control" id="email" aria-describedby="emailHelp">         
-      </div>
+
   <div class="col-md-6 col-sm-12">
       <label for="age">Age</label>
       <input value="{{$patients->age}}" name="age" placeholder="Enter Age" type="number" class="form-control" id="age" aria-describedby="emailHelp">         
@@ -57,6 +54,10 @@
       <input value="{{$patients->password}}" name="password" placeholder="Enter password" type="password" class="form-control" id="password" aria-describedby="emailHelp">
     
     </div>
+    <div class="col-md-12 col-sm-12">
+        <label for="email">Email</label>
+        <input value="{{$patients->email}}" name="email" placeholder="Enter email" type="email" class="form-control" id="email" aria-describedby="emailHelp">         
+      </div>
 
     <button type="submit" class="btn btn-primary">Registration</button>
 </div>

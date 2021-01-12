@@ -15,7 +15,7 @@ class AppointmentController extends Controller
     public function appointment()
     {
 
-        return view('frontend.master',compact('appointment'));
+        return view('frontend.master');
 
     }
 

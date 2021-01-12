@@ -23,7 +23,9 @@
   <li class="nav-item" role="booking_time">
     <a class="nav-link" id="contact-tab" data-toggle="tab" href="#bookingtime" role="tab" aria-controls="contact" aria-selected="false">Appointment Time</a>
   </li>
-
+  <li class="nav-item" role="feedback">
+    <a class="nav-link" id="contact-tab" data-toggle="tab" href="#feedback" role="tab" aria-controls="feedback" aria-selected="false">Feedback</a>
+  </li>
 
 </ul>
 <div class="tab-content" id="myTabContent">
@@ -54,6 +56,7 @@
             </p>
            
     </div>
+    <button href="#" class="btn btn-primary">Upadate Info</button>
 </main>
   </div>
   <div class="tab-pane fade" id="prescription" role="tabpanel" aria-labelledby="profile-tab">
@@ -135,7 +138,26 @@
                 </div>
 
   </div>
+<div class="tab-pane fade" id="feedback" role="tabpanel" aria-labelledby="feedback-tab">
+  <main class="col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content" role="main">
 
+            <h1>Give Your Feedback</h1>
+
+            <form action="{{route('feedback.store')}}" method="post">
+                @csrf
+            
+           
+                <div class="col-md-12 col-sm-12">
+                                <label for="feedback">Feedback</label>
+                                <input  name="feedback" placeholder="Enter feedback" type="text" class="form-control" id="feedback" aria-describedby="emailHelp">
+                              
+                              </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+
+
+  </main>
+ </div>
 
  </div>
 

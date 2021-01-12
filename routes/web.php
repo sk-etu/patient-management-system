@@ -61,6 +61,13 @@ Route::get('/diagnosis/list','Backend\DiagnosisController@list')->name('diagnosi
 Route::get('/diagnosis/delete/{id}','Backend\DiagnosisController@delete')->name('diagnosis.delete');
 Route::get('/diagnosis/view/{id}','Backend\DiagnosisController@view')->name('diagnosis.view');
 
+//feedback
+// Backend
+Route::get('/feedback/list','Frontend\FeedbackController@list')->name('feedback.list');
+Route::get('/feedback/view/{id}','Frontend\FeedbackController@view')->name('feedback.view');
+Route::get('/feedback/delete/{id}','Frontend\FeedbackController@delete')->name('feedback.delete');
+
+
 //medicine
 Route::get('/medicine','Backend\MedicineController@medicine')->name('medicine');
 Route::post('/medicine','Backend\MedicineController@createmedicine')->name('medicine.store');
@@ -115,7 +122,13 @@ Route::get('/customer/logout','Frontend\UserController@logout')->name('frontend.
 Route::get('/appointment','Frontend\AppointmentController@appointment')->name('appointment');
 Route::post('/appointment','Frontend\AppointmentController@createappointment')->name('appointment.store');
 Route::get('/appointment/cancle/{id}','Frontend\PatientProfileController@cancle')->name('appointment.cancle');
-    
+  
+//feedback
+// Frontend
+Route::get('/feedback','Frontend\FeedbackController@feedback')->name('feedback');
+Route::post('/feedback','Frontend\FeedbackController@createfeedback')->name('feedback.store');
+
+
 Route::get('/notification/view','Backend\NotificationController@view')->name('notification.view');
 
 

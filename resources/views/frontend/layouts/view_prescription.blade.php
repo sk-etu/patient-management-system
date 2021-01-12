@@ -1,9 +1,19 @@
 
+
 <!doctype html>
 <html lang="en">
 
+
+<br><br>
+
+<style type="text/css">
+ @media print{
+            .button{
+                display: none !important;
+            }
+        }
+    </style>
 <head>
-                                               
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -13,6 +23,11 @@
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
     <title>Prescription</title>
+   
+</head>
+
+<body>
+    <div class="container" id="print" class="print">
     <style>
         .diagnosis {
             border-right: 1px solid rgba(0, 0, 0, .1);
@@ -20,17 +35,17 @@
 
         .header {
             padding: 20px;
-            background-color: skyblue;
+            background-color: #66b4dc;
             border-bottom: 1px solid rgba(0, 0, 0, .1);
             margin-bottom: 15px;
         }
 
         .header img {
-            max-height: 225px;
+            max-height: 240px;
         }
         .footer {
             padding: 20px;
-            background-color: skyblue;
+            background-color: #66b4dc;
             border-top: 1px solid rgba(0, 0, 0, .1);
             margin-top: 15px;
         }
@@ -39,14 +54,10 @@
             margin: 0;
         }
     </style>
-</head>
-
-<body>
-    <div class="container">
         <div class="header">
             <div class="row">
                 <div class="col-md-6">
-                    <img src="{{asset('\backend\images\dr.eva.jpg')}}" alt="">
+                    <img src="{{asset('\backend\images\Capture.PNG')}}" alt="">
                 </div>
                 <div class="col-md-6 text-right">
                     <h3>Dr. Fatema Tuz Johra Eva</h3>
@@ -124,7 +135,14 @@
                 </div>
             </div>
         </div>
+        <button style='float:right;' onClick="myFunction()" class="btnprn btn button">Print Preview</a>
     </div>
+
+    <script type="text/javascript">
+     function myFunction(){
+            window.print();
+        }
+    </script>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
@@ -139,7 +157,7 @@
 </body>
 
 </html>
-
+                                               
 
 
 
