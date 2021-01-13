@@ -36,7 +36,7 @@
                              
                               <div class="col-md-6 col-sm-12">
                                 <label for="age">Age</label>
-                                <input  name="age" oninput="this.value=Math.abs(this.value)" min="1" placeholder="Enter Age" type="number" class="form-control" id="age" aria-describedby="emailHelp">         
+                                <input  name="age" oninput="this.value=Math.abs(this.value)" min="1" max="150" placeholder="Enter Age" type="number" class="form-control" id="age" aria-describedby="emailHelp">         
                               </div>
 
                               <div class="col-md-6 col-sm-12">

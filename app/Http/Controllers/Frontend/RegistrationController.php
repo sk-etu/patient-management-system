@@ -101,32 +101,41 @@ public function search(Request $request)
     public function edit($id)
     {
       $patients=Patient::find($id);
+      $users=User::find($id);
 
 
-      return view ('backend.layouts.patient_details.edit_patient',compact('patients'));
+      return view ('backend.layouts.patient_details.edit_patient',compact('patients','users'));
     }
 
 
      // insert update form
      public function update(Request $request,$id)
      {
-       $request->validate([
-        'name'=>'required',
-        'gender'=>'required',
-        'age'=>'required',
-        'phone'=>'required',
-        'address'=>'required',
-        'password'=>'required'
-         ]);
-        $patients=Patient::find($id);
-        $patients->update([
-            'name'=> $request->input('name'),
+        $request->validate([
+            'name'=>'required',
+            'gender'=>'required',
+            'age'=>'required',
+            'phone'=>"required|regex:/^\+?(88)?0?1[3456789][0-9]{8}\b/",
+            'address'=>'required',
+            'email'=>'required',
+            'password'=>'required'
+
+        ]);
+    
+        $user = User::create([
+            'name'=>$request->input('name'),
+            'email'=>$request->input('email'),
+            'password'=>bcrypt($request->input('password'))
+        ]);
+    
+        Patient::create([
+            'user_id'=>$user->id,
             'gender'=>$request->input('gender'),
             'age'=>$request->input('age'),
             'phone'=>$request->input('phone'),
             'address'=>$request->input('address'),
-            'password'=>$request->input('password')
         ]);
+
  
         return redirect()->back()->with('message','Patient Updated Successfully.');
      }

@@ -147,9 +147,9 @@
                 @csrf
             
            
-                <div class="col-md-12 col-sm-12">
+                <div class="col-md-12 col-sm-16">
                                 <label for="feedback">Feedback</label>
-                                <input  name="feedback" placeholder="Enter feedback" type="text" class="form-control" id="feedback" aria-describedby="emailHelp">
+                                <textarea  name="feedback" placeholder="Enter feedback" type="text" class="form-control" id="feedback" aria-describedby="emailHelp"></textarea>
                               
                               </div>
             <button type="submit" class="btn btn-primary">Submit</button>

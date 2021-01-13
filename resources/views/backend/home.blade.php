@@ -27,8 +27,9 @@
                                                 <i class="zmdi zmdi-calendar-note"></i>
                                             </div>
                                             <div class="text">
+                                            <a href="{{route('appointment.list')}}">
                                                 <h2>{{$list}}</h2>
-                                                <span>requested appointment</span>
+                                                <span>requested appointment</span></a>
                                             </div>
                                         </div>
                                         <div class="overview-chart">
@@ -45,8 +46,9 @@
                                                 <i class="fa fa-list"></i>
                                             </div>
                                             <div class="text">
+                                            <a href="{{route('appointment.list')}}">
                                                 <h2>{{$appointment}}</h2>
-                                                <span>left appointment</span>
+                                                <span>left appointment</span></a>
                                             </div>
                                         </div>
                                         <div class="overview-chart">
@@ -63,8 +65,9 @@
                                             <i class="zmdi zmdi-account-o"></i>
                                             </div>
                                             <div class="text">
+                                            <a href="{{route('patient.list')}}">
                                                 <h2>{{$patient}}</h2>
-                                                <span>total patient</span>
+                                                <span>total patient</span></a>
                                             </div>
                                         </div>
                                         <div class="overview-chart">
@@ -81,8 +84,9 @@
                                                 <i class="fa fa-bell"></i>
                                             </div>
                                             <div class="text">
+                                            <a href="{{route('notification.list')}}">
                                                 <h2>{{$notice}}</h2>
-                                                <span>total notice</span>
+                                                <span>total notice</span></a>
                                             </div>
                                         </div>
                                         <div class="overview-chart">

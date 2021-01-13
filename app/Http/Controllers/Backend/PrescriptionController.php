@@ -133,19 +133,25 @@ class PrescriptionController extends Controller
         'pulse'=>'required',
         'date'=>'required'
         ]);
-       $prescription=Prescription::find($id);
-       $prescription->update([
-        'patient_id'=>$request->input('patient_id'),
-        'user_id'=>auth()->user()->id,
+        $appointment=Appointment::find($request->id);
+
+      // in form passing data
+      $data = Prescription::create([
+        'user_id'=> auth()->user()->id,
+        'patient_id'=>$appointment->patient_id,
         'weight'=>$request->input('weight'),
         'pulse'=>$request->input('pulse'),
         'bp'=>$request->input('bp'),
         'date'=>$request->input('date'),
-        'chief_complaint'=>$request->input('chief_complaint'),      
         'additional_instructions'=>$request->input('additional_instructions'),
+        'chief_complaint'=>$request->input('chief_complaint'),
         'history'=>$request->input('history')
-       ]);
 
-       return redirect()->back()->with('message','Product Updated Successfully.');
+    ]);
+
+    $appointment->update(['status'=>false]);
+
+
+       return redirect()->route('prescribe_medicine',['p_id'=>$data->id])->with('message','Prescription Updated Successfully.');
     }
 }

@@ -42,17 +42,6 @@
                     <input value="{{$prescription->pulse}}" name="pulse"   type="number" class="form-control" id="pulse">
                     </div>
 
-
-                    <!-- <div class="form-group">
-                        <label for="diagnosis">Select Diagnosis Name</label>
-                        <select class="form-control" name="diagnosis_id" id="diagnosis">
-                            @foreach($diagnoses as $diagnosis)
-                            <option @if($prescription->diagnosis_id==$diagnosis->id) selected @endif value="{{$diagnosis->id}}">{{$diagnosis->name}}</option>
-                            @endforeach
-                        </select>
-                    </div>
-                     -->
-
                     <div class="form -group">
                         <label for="chief_complaint">Chief Complaint </label>
                         <textarea name="chief_complaint"  class="form-control" id="chief_complaint">{{$prescription->chief_complaint}}</textarea>

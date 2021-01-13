@@ -5,7 +5,11 @@
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class="table-responsive table--no-card m-b-30">
-                                   
+
+                                @if(session()->has('message'))
+                                    <p class="alert alert-danger">{{session()->get('message')}}</p>
+                                @endif
+
                                 <table class="table table-borderless table-striped table-earning">
                                         <thead>
                                             <tr>

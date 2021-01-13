@@ -47,4 +47,31 @@ public function createprescribe_medicine(Request $request)
       return view('backend.layouts.prescribe_medicine.Prescribe_medicine_list',compact('list','diagnoses','medicines'));
   
     }
+
+     //single data edit
+     public function edit($id)
+     {
+         $prescribe_medicine=Prescribe_medicine::find($id);
+ 
+         return view('backend.layouts.prescribe_medicine_details.edit_prescribe_medicine',compact('Prescribe_medicine'));
+ 
+     }
+ 
+     public function update(Request $request,$id)
+     {
+ 
+ 
+         $prescribe_medicine=Prescribe_medicine::find($id);
+         Prescribe_medicine::create([
+            'prescription_id'=> $request->input('p_id'),
+            'medicine_id'=> $request->input('medicine_id'),
+            'days'=>$request->input('days'),
+            'dosages'=>$request->input('dosages'),
+            'diagnosis_id'=>$request->input('diagnosis_id')
+            
+        ]);
+             return redirect()->back()->with('message','Prescribe medicine update sucessfully' );
+     }
+
+
 }

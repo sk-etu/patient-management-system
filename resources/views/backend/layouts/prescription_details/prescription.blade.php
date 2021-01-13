@@ -29,7 +29,7 @@
                   </div>
                   <div class="form-group">
                     <label for="weight">Weight</label>
-                    <input  name="weight" oninput="this.value=Math.abs(this.value)" min="1"  placeholder="Enter patient weight" type="number" class="form-control" id="weight" aria-describedby="emailHelp">
+                    <input  name="weight" oninput="this.value=Math.abs(this.value)" min="1" max="150" placeholder="Enter patient weight" type="number" class="form-control" id="weight" aria-describedby="emailHelp">
                     </div>
                   <div class="form-group">
                     <label for="bp">Blood Pressure</label>

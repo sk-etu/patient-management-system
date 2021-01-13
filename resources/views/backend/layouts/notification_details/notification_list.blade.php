@@ -6,13 +6,17 @@
                             <div class="col-lg-12">
                                 <div class="table-responsive table--no-card m-b-30">
                                    
+
+                                @if(session()->has('message'))
+                                    <p class="alert alert-danger">{{session()->get('message')}}</p>
+                                @endif
+                                
                                 <table class="table table-borderless table-striped table-earning">
                                         <thead>
                                             <tr>
                                             <th>ID</th>
                                             <th>Date</th>
                                             <th>Notification Name</th>
-                                            <th>Description</th>  
                                             <th>Action</th>                                        
                                             </tr>
                                         </thead>
@@ -21,8 +25,7 @@
                                         <tr>
                                             <th scope="row">{{$key+1}}</th>
                                             <td>{{$data->date}}</td>
-                                            <td>{{$data->name}}</td>
-                                            <td>{{$data->description}}</td>  
+                                            <td>{{$data->name}}</td> 
                                             <td>
         
                                                 <a href="{{route('notification.delete',$data->id)}}" class="btn btn-sm btn-info">Delete</a>

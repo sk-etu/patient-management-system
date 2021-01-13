@@ -1,8 +1,7 @@
 <aside class="menu-sidebar d-none d-lg-block">
             <div class="logo">
-                <a href="#">
-                    <img src="{{asset('backend/images/icon/health.PNG')}}" alt="health" />
-                </a>
+            <a href="index.html" style='color:black;' class="navbar-brand"><i class="fa fa-h-square"></i>ealth Center</a>
+                
             </div>
             <div class="menu-sidebar__content js-scrollbar1">
                 <nav class="navbar-sidebar">
@@ -138,7 +137,7 @@
 
                    <!-- Feedback   -->
 
-                        <li  style="margin-top: 15px;" class="{{request()->routeIs('feedback') ? 'active':''}}  ">
+                        <li  style="margin-top: 15px;" class="{{request()->routeIs('feedback.list') ? 'active':''}}  ">
                             <a href="{{route('feedback.list')}}">
                             <i class="far fa-comment"></i>Feedback</a>
                         </li>

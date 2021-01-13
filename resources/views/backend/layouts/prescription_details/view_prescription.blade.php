@@ -63,7 +63,8 @@
                     <h3>Dr. Fatema Tuz Johra Eva</h3>
                     <p>MBBS(Dhaka), D.D.V(Vienna) <br /> Skin, V.D Allergy <br /> Leprosy Specialist </p>
                     <h5>Consultant: Dept. of Skin, VD & Allergy</h5>
-                    <p>Islami Bank Hospital Mirpur Dhaka <br /> BMDC Reg: NO.: A-27847 <br /> Call: 01711113107</p>
+                    <p>Islami Bank Hospital Mirpur Dhaka <br /> BMDC Reg: NO.: A-27847 <br /> Call: 01725710843</p>
+                   
                 </div>
             </div>
         </div>
@@ -127,11 +128,14 @@
         <div class="footer">
             <div class="row">
                 <div class="col-md-6 text-left">
-                    <p>Address: Uttara, Dhaka</p>
+                <h5>Personal Chamber</h5>
+                   <p> Health Center, Uttara, Dhaka 1230</p>
+                   
                 </div>
                 <div class="col-md-6 text-right">
                     <h5>For Serial:</h5><br>
-                    <p>019992 346638, 019992 346638, 019992 346638</p>
+                    <p>Dr.Fatema Tuz Johra Eva.com Or 019992 346638</p>
+                    
                 </div>
             </div>
         </div>

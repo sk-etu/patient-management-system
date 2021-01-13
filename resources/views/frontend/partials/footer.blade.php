@@ -20,7 +20,7 @@
                               
                                    <div class="stories-info">
                                         <a href="#"><h5>Dr. Fatema chamber</h5></a>
-                                        <span> Beside East West Medical College & Hospital, Uttara, Dhaka 1230</span>
+                                        <span> Health Center,Uttara, Dhaka 1230</span>
                                    </div>
                               </div>
                          </div>
@@ -30,7 +30,9 @@
                          <div class="footer-thumb">
                               <div class="opening-hours">
                                    <h4 class="wow fadeInUp" data-wow-delay="0.4s">Opening Hours</h4>
-                                   <p>sunday - Thursday <span>10:00 AM - 8:00 PM</span></p>
+                                   <p>sunday - Thursday <span>(4:00 PM - 10:00 PM)</span></p>
+                                   <p>Islami Bank Hospital Mirpur Dhaka</p>
+                                   <p>(08:00 AM - 2:30 PM)</p>
                                    <p>Friday And Saturday <span>Closed</span></p>
                               </div> 
 

@@ -24,7 +24,7 @@
 
     <div class="col-md-6 col-sm-12">
       <label for="name">patients Name</label>
-      <input value="{{$patients->name}}" name="name" placeholder="Enter patients Name" type="text" class="form-control" id="name" aria-describedby="emailHelp">
+      <input value="{{$patients->user->name}}" name="name" placeholder="Enter patients Name" type="text" class="form-control" id="name" aria-describedby="emailHelp">
     </div>
   <div class="col-md-6 col-sm-12">
       <label for="gender">Gender</label>
@@ -37,7 +37,7 @@
 
   <div class="col-md-6 col-sm-12">
       <label for="age">Age</label>
-      <input value="{{$patients->age}}" name="age" placeholder="Enter Age" type="number" class="form-control" id="age" aria-describedby="emailHelp">         
+      <input value="{{$patients->age}}" name="age"  oninput="this.value=Math.abs(this.value)" min="1" max="150" placeholder="Enter Age" type="number" class="form-control" id="age" aria-describedby="emailHelp">         
     </div>
     <div class="col-md-6 col-sm-12">
       <label for="phone">Phone Number</label>
@@ -51,12 +51,12 @@
 
     <div class="col-md-6 col-sm-12">
       <label for="password">Password</label>
-      <input value="{{$patients->password}}" name="password" placeholder="Enter password" type="password" class="form-control" id="password" aria-describedby="emailHelp">
+      <input value="{{$patients->user->password}}" name="password" placeholder="Enter password" type="password" class="form-control" id="password" aria-describedby="emailHelp">
     
     </div>
     <div class="col-md-12 col-sm-12">
         <label for="email">Email</label>
-        <input value="{{$patients->email}}" name="email" placeholder="Enter email" type="email" class="form-control" id="email" aria-describedby="emailHelp">         
+        <input value="{{$patients->user->email}}" name="email" placeholder="Enter email" type="email" class="form-control" id="email" aria-describedby="emailHelp">         
       </div>
 
     <button type="submit" class="btn btn-primary">Registration</button>

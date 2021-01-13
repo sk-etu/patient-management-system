@@ -44,6 +44,10 @@ Route::get('/prescription/search','Backend\PrescriptionController@search')->name
 Route::get('/prescribe_medicine','Backend\Prescribe_medicineController@prescribe_medicine')->name('prescribe_medicine');
 Route::post('/prescribe_medicine','Backend\Prescribe_medicineController@createprescribe_medicine')->name('prescribe_medicine.store');
 Route::get('/prescribe_medicine/list','Backend\Prescribe_medicineController@list')->name('prescribe_medicine.list');
+//edit
+Route::get('/prescribe_medicine/edit/{id}','Backend\Prescribe_medicineController@edit')->name('prescribe_medicine.edit');
+Route::put('/prescribe_medicine/update/{id}','Backend\Prescribe_medicineController@update')->name('prescribe_medicine.update');
+
 
 //appointment
 // Backend
