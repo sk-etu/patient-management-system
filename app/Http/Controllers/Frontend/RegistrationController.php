@@ -98,47 +98,47 @@ public function search(Request $request)
 
 
           //Edit data
-    public function edit($id)
-    {
-      $patients=Patient::find($id);
-      $users=User::find($id);
+    // public function edit($id)
+    // {
+    //   $patients=Patient::find($id);
+    //   $users=User::find($id);
 
 
-      return view ('backend.layouts.patient_details.edit_patient',compact('patients','users'));
-    }
+    //   return view ('backend.layouts.patient_details.edit_patient',compact('patients','users'));
+    // }
 
 
-     // insert update form
-     public function update(Request $request,$id)
-     {
-        $request->validate([
-            'name'=>'required',
-            'gender'=>'required',
-            'age'=>'required',
-            'phone'=>"required|regex:/^\+?(88)?0?1[3456789][0-9]{8}\b/",
-            'address'=>'required',
-            'email'=>'required',
-            'password'=>'required'
+    //  // insert update form
+    //  public function update(Request $request,$id)
+    //  {
+    //     $request->validate([
+    //         'name'=>'required',
+    //         'gender'=>'required',
+    //         'age'=>'required',
+    //         'phone'=>"required|regex:/^\+?(88)?0?1[3456789][0-9]{8}\b/",
+    //         'address'=>'required',
+    //         'email'=>'required|email|unique:users,email,'.$id,
+           
 
-        ]);
+    //     ]);
     
-        $user = User::create([
-            'name'=>$request->input('name'),
-            'email'=>$request->input('email'),
-            'password'=>bcrypt($request->input('password'))
-        ]);
+    //     $user = User::create([
+    //         'name'=>$request->input('name'),
+    //         'email'=>$request->input('email'),
+           
+    //     ]);
     
-        Patient::create([
-            'user_id'=>$user->id,
-            'gender'=>$request->input('gender'),
-            'age'=>$request->input('age'),
-            'phone'=>$request->input('phone'),
-            'address'=>$request->input('address'),
-        ]);
+    //     Patient::create([
+    //         'user_id'=>$user->id,
+    //         'gender'=>$request->input('gender'),
+    //         'age'=>$request->input('age'),
+    //         'phone'=>$request->input('phone'),
+    //         'address'=>$request->input('address'),
+    //     ]);
 
  
-        return redirect()->back()->with('message','Patient Updated Successfully.');
-     }
+    //     return redirect()->back()->with('message','Patient Updated Successfully.');
+    //  }
 
   
 }

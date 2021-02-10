@@ -12,7 +12,6 @@
                                         <thead>
                                             <tr>
                                             <th>ID</th>
-                                            <th>Patient ID</th>
                                             <th>Patient Name</th>
                                             <th>Date</th>
                                             <th>Action</th>
@@ -22,11 +21,10 @@
                                         @foreach($list as $key=>$data)
                                         <tr>
                                             <td>{{$key+1}}</td>
-                                            <td>{{$data->patient_id}}</td>
                                             <td>{{$data->patient_name}}</td>
                                             <td>{{$data->date}}</td>
                                             <td>
-                                                <a href="{{route('appointment.delete',$data->id)}}" class="btn btn-sm btn-info">Cancle</a>
+                                                <a href="{{route('appointment.delete',$data->id)}}" class="btn btn-sm btn-info">Cancel</a>
                                                 <a href="{{route('appointment.view',$data->id)}}" class="btn btn-sm btn-info">View</a>
                                                 @if($data->status=='true')
                                                 <a href="{{route('insert.prescription',$data->id)}}" class="btn btn-sm btn-info">Prescription</a>

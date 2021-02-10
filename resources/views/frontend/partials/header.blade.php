@@ -3,12 +3,12 @@
                <div class="row">
 
                     <div class="col-md-4 col-sm-5">
-                         <p>Welcome to a Professional Health Care</p>
+                         <p>Welcome to a Health Center</p>
                     </div>
                          
                     <div class="col-md-8 col-sm-7 text-align-right">
                          <span class="phone-icon"><i class="fa fa-phone"></i> 01725-710843</span>
-                         <span class="date-icon"><i class="fa fa-calendar-plus-o"></i> 10:00 AM - 8:00 PM (Sun-Thu)</span>
+                         <span class="date-icon"><i class="fa fa-calendar-plus-o"></i> 4:00 PM - 10:00 PM(Sun-Thu)</span>
                          <span class="email-icon"><i class="fa fa-envelope-o"></i> <a href="#">health@gmail.com</a></span>
                     </div>
 
@@ -28,7 +28,7 @@
                     </button>
 
                     <!-- lOGO TEXT HERE -->
-                    <a href="index.html" class="navbar-brand"><i class="fa fa-h-square"></i>ealth Center</a>
+                    <a href="index.html" class="navbar-brand"></i>Health Center</a>
                </div>
 
                <!-- MENU LINKS -->

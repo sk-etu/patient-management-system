@@ -123,35 +123,35 @@ class PrescriptionController extends Controller
       return view ('backend.layouts.prescription_details.edit_prescription',compact('prescription'));
     }
 
-    // insert update form
-    public function update(Request $request,$id)
-    {
-      $request->validate([
+    // // insert update form
+    // public function update(Request $request,$id)
+    // {
+    //   $request->validate([
         
-        'weight'=>'required',
-        'bp'=>'required',
-        'pulse'=>'required',
-        'date'=>'required'
-        ]);
-        $appointment=Appointment::find($request->id);
+    //     'weight'=>'required',
+    //     'bp'=>'required',
+    //     'pulse'=>'required',
+    //     'date'=>'required'
+    //     ]);
+    //     $appointment=Appointment::find($request->id);
 
-      // in form passing data
-      $data = Prescription::create([
-        'user_id'=> auth()->user()->id,
-        'patient_id'=>$appointment->patient_id,
-        'weight'=>$request->input('weight'),
-        'pulse'=>$request->input('pulse'),
-        'bp'=>$request->input('bp'),
-        'date'=>$request->input('date'),
-        'additional_instructions'=>$request->input('additional_instructions'),
-        'chief_complaint'=>$request->input('chief_complaint'),
-        'history'=>$request->input('history')
+    //   // in form passing data
+    //   $data = Prescription::create([
+    //     'user_id'=> auth()->user()->id,
+    //     'patient_id'=>$appointment->patient_id,
+    //     'weight'=>$request->input('weight'),
+    //     'pulse'=>$request->input('pulse'),
+    //     'bp'=>$request->input('bp'),
+    //     'date'=>$request->input('date'),
+    //     'additional_instructions'=>$request->input('additional_instructions'),
+    //     'chief_complaint'=>$request->input('chief_complaint'),
+    //     'history'=>$request->input('history')
 
-    ]);
+    // ]);
 
-    $appointment->update(['status'=>false]);
+    // $appointment->update(['status'=>false]);
 
 
-       return redirect()->route('prescribe_medicine',['p_id'=>$data->id])->with('message','Prescription Updated Successfully.');
-    }
+    //    return redirect()->route('prescribe_medicine',['p_id'=>$data->id])->with('message','Prescription Updated Successfully.');
+    // }
 }

@@ -1,4 +1,4 @@
-@extends('frontend.master')
+<!-- @extends('backend.master')
 @section('main')
 
 
@@ -16,15 +16,15 @@
     @endforeach
     @endif
 
-    <h1>Registration</h1>
-    <p>Please fill in this form to create an account.</p>
-    <form action="{{route('patient.update',$patients->id)}}" method="post" >
+    <h1>Update Your Information</h1>
+
+    <form action="#" method="post" >
     @method('put')
     @csrf
 
     <div class="col-md-6 col-sm-12">
       <label for="name">patients Name</label>
-      <input value="{{$patients->user->name}}" name="name" placeholder="Enter patients Name" type="text" class="form-control" id="name" aria-describedby="emailHelp">
+      <input value="{{$patients->user->name}}" name="name" placeholder="Enter patient Name" type="text" class="form-control" id="name" aria-describedby="emailHelp">
     </div>
   <div class="col-md-6 col-sm-12">
       <label for="gender">Gender</label>
@@ -35,7 +35,7 @@
       </select>
   </div>
 
-  <div class="col-md-6 col-sm-12">
+    <div class="col-md-6 col-sm-12">
       <label for="age">Age</label>
       <input value="{{$patients->age}}" name="age"  oninput="this.value=Math.abs(this.value)" min="1" max="150" placeholder="Enter Age" type="number" class="form-control" id="age" aria-describedby="emailHelp">         
     </div>
@@ -48,23 +48,14 @@
       <label for="address">Address</label>
       <input value="{{$patients->address}}" name="address" placeholder="Enter address" type="text" class="form-control" id="address" aria-describedby="emailHelp">         
     </div>
-
     <div class="col-md-6 col-sm-12">
-      <label for="password">Password</label>
-      <input value="{{$patients->user->password}}" name="password" placeholder="Enter password" type="password" class="form-control" id="password" aria-describedby="emailHelp">
-    
+      <label for="email">patients Email</label>
+      <input value="{{$patients->user->email}}" name="email" placeholder="Enter patient email" type="email" class="form-control" id="email" aria-describedby="emailHelp">
     </div>
-    <div class="col-md-12 col-sm-12">
-        <label for="email">Email</label>
-        <input value="{{$patients->user->email}}" name="email" placeholder="Enter email" type="email" class="form-control" id="email" aria-describedby="emailHelp">         
-      </div>
 
-    <button type="submit" class="btn btn-primary">Registration</button>
+    <button type="submit" class="btn btn-primary">Update</button>
+
+</form>
 </div>
 
-        <div class="container signin">
-          <p>Already have an account? <a href="{{route('login')}}">Sign in</a>.</p>
-        </div>
-</form>
-
-@stop
+@stop -->

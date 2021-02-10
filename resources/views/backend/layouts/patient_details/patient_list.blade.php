@@ -43,9 +43,9 @@
                                             <td>{{$data->id}}</td>
                                             <td>{{$data->user->name}}</td>
                                             <td>
-                                                <a href="{{route('patient.edit',$data->id)}}" class="btn btn-sm btn-info">Edit</a>
+                                               
                                                 <a href="{{route('patient.delete',$data->id)}}" class="btn btn-sm btn-info">Delete</a>
-                                                <a href="{{route('patient.view',$data->id)}}" class="btn btn-sm btn-info">View</a>
+                                                <a href="{{route('patient.view',$data->id)}}" class="btn btn-sm btn-info">Details</a>
                                             </td>                                       
                                         </tr>
                                         @endforeach

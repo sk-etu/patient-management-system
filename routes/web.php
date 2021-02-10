@@ -35,8 +35,8 @@ Route::get('/prescription/list','Backend\PrescriptionController@list')->name('pr
 Route::get('/prescription/delete/{id}','Backend\PrescriptionController@delete')->name('prescription.delete');
 Route::get('/prescription/view/{id}','Backend\PrescriptionController@view')->name('prescription.view');
 //edit
-Route::get('/prescription/edit/{id}','Backend\PrescriptionController@edit')->name('prescription.edit');
-Route::put('/prescription/update/{id}','Backend\PrescriptionController@update')->name('prescription.update');
+// Route::get('/prescription/edit/{id}','Backend\PrescriptionController@edit')->name('prescription.edit');
+// Route::put('/prescription/update/{id}','Backend\PrescriptionController@update')->name('prescription.update');
 //search
 Route::get('/prescription/search','Backend\PrescriptionController@search')->name('search');
 
@@ -100,9 +100,9 @@ Route::put('/notification/update/{id}','Backend\NotificationController@update')-
 Route::get('/patient/list','Frontend\RegistrationController@list')->name('patient.list');
 Route::get('/patient/view/{id}','Frontend\RegistrationController@view')->name('patient.view');
 Route::get('/patient/delete/{id}','Frontend\RegistrationController@delete')->name('patient.delete');
-//edit
-Route::get('/patient/edit/{id}','Frontend\RegistrationController@edit')->name('patient.edit');
-Route::put('/patient/update/{id}','Frontend\RegistrationController@update')->name('patient.update');
+// //edit
+// Route::get('/patient/edit/{id}','Frontend\RegistrationController@edit')->name('patient.edit');
+// Route::put('/patient/update/{id}','Frontend\RegistrationController@update')->name('patient.update');
 //search
 Route::get('/patient/search','Frontend\RegistrationController@search')->name('patient.search');
 

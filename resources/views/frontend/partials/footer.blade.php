@@ -21,6 +21,10 @@
                                    <div class="stories-info">
                                         <a href="#"><h5>Dr. Fatema chamber</h5></a>
                                         <span> Health Center,Uttara, Dhaka 1230</span>
+                                        <ul class="social-icon">
+                                   
+                                   <a href="http://thehospitalinfo.com/islami-bank-hospital-mirpur-branch-address/" class="fa fa-instagram">islami bank hospital mirpur dhaka web site</a>
+                              </ul>
                                    </div>
                               </div>
                          </div>

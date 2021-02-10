@@ -50,9 +50,9 @@
                                                 <td>{{$data->patient_id}}</td> 
                                                 <td>{{$data->patientrelation->user->name}}</td>                                              
                                                 <td>
-                                                <a href="{{route('prescription.edit',$data->id)}}" class="btn btn-sm btn-info">Update</a>
-                                                <a href="{{route('prescription.delete',$data->id)}}" class="btn btn-sm btn-info">Delete</a>
+                                               <a href="{{route('prescription.delete',$data->id)}}" class="btn btn-sm btn-info">Delete</a>
                                                 <a href="{{route('prescription.view',$data->id)}}" class="btn btn-sm btn-info">View</a>
+                                                <a href="#" class="btn btn-sm btn-info">E-mail</a>
                                             
                                                 </td>
                                             </tr>

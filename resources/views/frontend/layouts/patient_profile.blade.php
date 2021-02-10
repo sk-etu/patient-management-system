@@ -56,7 +56,7 @@
             </p>
            
     </div>
-    <button href="#" class="btn btn-primary">Upadate Info</button>
+    <!-- <button href="#" class="btn btn-primary">Upadate Info</button> -->
 </main>
   </div>
   <div class="tab-pane fade" id="prescription" role="tabpanel" aria-labelledby="profile-tab">
@@ -124,7 +124,7 @@
                                                 <td>{{$data->date}}</td>
                                                 <td>{{$data->emergency}}</td>                                               
                                                 <td>
-                                               <a href="{{route('appointment.cancle',$data->id)}}" class="btn btn-sm btn-info">Cancle Appointment</a>
+                                               <a href="{{route('appointment.cancle',$data->id)}}" class="btn btn-sm btn-info">Cancel Appointment</a>
                                                 </td>
                                             </tr>
                                         @endforeach    

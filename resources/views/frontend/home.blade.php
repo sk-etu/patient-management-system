@@ -57,7 +57,8 @@
                                    <img src="{{asset('/frontend/images/feva.jpg')}}" class="img-responsive" alt="Dr. Fatema">
                                    <figcaption>
                                         <h3>Dr. Fatema tuz johra eva</h3>
-                                        <p>Medicine specialist</p>
+                                        <p>MBBS(Dhaka), MD(Nephrology-BSMMU) <br />Kidney Diseases & <br /> Medicine Specialist </p>
+                   
                                         <div class="team-contact-info">
                                              <p><i class="fa fa-phone"></i> 017-68504750</p>
                                              <p><i class="fa fa-envelope-o"></i> <a href="#">fatema@gmail.com</a></p>
